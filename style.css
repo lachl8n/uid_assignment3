@@ -4,7 +4,7 @@ body {
 }
 
 header {
-    background-color: orange;
+    /* background-color: orange; */
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -13,10 +13,14 @@ header {
     flex-direction: row;
 }
 
+a {
+    text-decoration: none;
+}
+
 .nav-item {
     height: 100px;
     margin: 0 20px;
-    background-color: red;
+    /* background-color: red; */
 }
 
 .nav-left > img {
@@ -26,20 +30,22 @@ header {
 .nav-middle {
     text-align: center;
     width: 50%;
+    position: relative;
+    margin-left: 135px;
 }
 
-.nav-middle > ul > a > .nav-box {
+.nav-middle > ul > li {
     display: inline-block;
     padding: 15px 2.5%;
+    list-style: none;
 }
 
-.nav-middle > ul > a > .nav-box > li:hover {
+.nav-box:hover {
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
     transition: ease-in-out 0.4s;
 }
 
-.nav-middle > ul > a > .nav-box > li {
-    list-style: none;
+.nav-box {
     /* background-color: red; */
     font-size: 18px;
     font-family: 'Fredoka';
@@ -49,6 +55,27 @@ header {
     vertical-align: middle;
     border-radius: 30px;
     transition: 0.4s;
+}
+
+.product-drop-down {
+    background-color: #FFF9E2;
+    font-size: 15px;
+    border-radius: 15px 30px;
+    margin-top: 5px;
+    width: 180px;
+    text-align: left;
+    z-index: 1;
+    font-family: 'Fredoka';
+    padding: 15px 20px;
+}
+
+td, th {
+    border-bottom: 0.5px solid black;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
 }
 
 .nav-right {
@@ -121,8 +148,6 @@ header {
 
 .back-tan {
     background-color: #FFF9E2;
-    height: 1300px;
-    overflow-y: hidden;
 }
 
 .box-1 > img {
@@ -139,27 +164,33 @@ header {
 #red-candy-1 {
     top: 100px;
     left: -280px;
-    height: 600px;
+    /* height: 90%;
+    min-height: 30%;
+    max-height: 90%;; */
+    width: 52%;
 }
 
 #red-candy-2 {
     top: -20px;
     right: -290px;
     transform: scaleX(-1);
-    height: 600px;
+    /* height: 600px; */
+    width: 52%;
 }
 
 #red-candy-3 {
     top: 600px;
     /* left: 50px; */
-    left: 200px;
-    height: 520px;
+    left: 50px;
+    /* height: 520px; */
+    width: 45%;
     transform: rotate(-15deg);
 }
 
 #red-candy-4 {
     top: 600px;
-    height: 700px;
+    /* height: 700px; */
+    width: 65%;
     right: -300px;
     transform: rotate(30deg) scaleX(-1);
 }
@@ -172,9 +203,10 @@ header {
 }
 
 #red-candy-6 {
-    top: 1270px;
-    height: 700px;
-    right: -270px;
+    top: 1200px;
+    /* height: 700px; */
+    width: 65%;
+    right: -300px;
     transform: rotate(60deg);
 }
 
@@ -265,7 +297,7 @@ h2 {
     width: 100%;
     position: absolute;
     top: 120px;
-    background-color: green;
+    /* background-color: green; */
     z-index: 3;
 }
 
@@ -279,7 +311,7 @@ h2 {
 }
 
 .search-section > .search-bar > input {
-    width: 90%;
+    width: 89%;
     font-size: 30px;
     padding: 7px 7px;
     margin-left: auto;
@@ -296,12 +328,4 @@ h2 {
     position: relative;
     height: 25px;
     top: 2px;
-}
-
-.search-section > .search-bar > #search-close {
-    right: 6px;
-}
-
-.search-section > .search-bar > #search-icon {
-    right: 91.5%;
 }
