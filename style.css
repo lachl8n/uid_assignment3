@@ -208,10 +208,12 @@ table {
     width: 65%;
     right: -300px;
     transform: rotate(60deg);
+}
 
 .woman-making-sweets {
     text-align: center;
 }
+
 .woman-making-sweets img{
     display: inline-block;
     top: 182px;
