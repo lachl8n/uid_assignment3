@@ -83,7 +83,7 @@ table {
     margin-right: 50px;
 }
 
-.nav-right > object {
+.nav-right > img {
     height: 40px;
     margin: 30px 20px;
     /* color: red; */
@@ -255,11 +255,11 @@ h2 {
     transform: translateY(-5px);
 }
 
-.homepage-category > img, .homepage-product > img{
+.homepage-category > img, .homepage-product > img, .homepage-category > a > img{
     border-radius: 40px;
 }
 
-.homepage-category > p {
+.homepage-category > p, .homepage-category > a > p {
     background-color: #AFBFA3;
     color: white;
     font-size: 20px;
@@ -274,7 +274,7 @@ h2 {
     margin-bottom: 0;
 }
 
-.column > p{
+.column > p, .column > a > p {
     font-family: 'Fredoka';
     justify-content: center;
     align-items: center;
@@ -392,3 +392,11 @@ h2 {
     
     /*overflow: hidden; */
 }
+
+/* TEMPORARY UNTIL JS IS IMPLEMENTED */
+.product-drop-down, .search-section {
+    display: none;
+}
+
+
+/* ============================== */
