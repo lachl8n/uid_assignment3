@@ -161,6 +161,14 @@ table {
     z-index: 0;
 }
 
+#red-candy-0 {
+    top: 400px;
+    left: -350px;
+    width: 50%;
+    transform: rotate(6deg); 
+
+}
+
 #red-candy-1 {
     top: 100px;
     left: -280px;
@@ -168,6 +176,7 @@ table {
     min-height: 30%;
     max-height: 90%;; */
     width: 52%;
+    
 }
 
 #red-candy-2 {
@@ -210,16 +219,6 @@ table {
     transform: rotate(60deg);
 }
 
-.woman-making-sweets {
-    text-align: center;
-}
-
-.woman-making-sweets img{
-    display: inline-block;
-    top: 182px;
-    height: 229px;
-    
-}
 
 h2 {
     text-align: center;
@@ -339,4 +338,61 @@ h2 {
     position: relative;
     height: 25px;
     top: 2px;
+}
+
+#center{
+    text-align: center;
+}
+
+.flexcontainter{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding:20px;
+
+}
+.textbox-1 {
+    color:rgb(124, 144, 108);
+    font-family: 'Fredoka';
+   /*padding: 20px;
+    max-width: 600px;
+    width:100%;
+    text-align: center;
+    */
+    font-size: 32px;
+    max-width: 863px;
+    max-height: 415px;
+    margin: 0 auto; 
+}
+/*
+.textbox-1 p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #333;
+}
+
+
+@media (max-width: 768px) {
+    .textbox {
+        padding: 15px;
+    }
+
+    .textbox p {
+        font-size: 0.9rem;
+    }
+}
+*/
+.woman-making-sweets {
+    height: 407px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    
+    /*overflow: hidden; */
+}
+
+.woman-making-sweets img {
+    /* clip: rect(0px, 324px, 407px, 0px) */
 }
