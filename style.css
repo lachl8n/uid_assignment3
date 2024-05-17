@@ -403,7 +403,7 @@ h2 {
 }
 
 /* TEMPORARY UNTIL JS IS IMPLEMENTED */
-.product-drop-down, .search-section, .product-container {
+.product-drop-down, .search-section {
     display: none;
 }
 
@@ -432,6 +432,11 @@ h2 {
     border-radius: 40px;
 }
 
+.product-content > span > img {
+    height: 15px;
+    margin-right: 5px;
+}
+
 .product-content > p {
     font-size: 15px;
 }
@@ -454,6 +459,11 @@ h2 {
     text-align: center;
     font-size: 15px;
     transition: all 1s;
+}
+
+.add-to-cart-btn > img {
+    height: 10px;
+    margin-right: 10px;
 }
 
 .add-to-cart-btn:hover {
