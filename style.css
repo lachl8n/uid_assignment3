@@ -261,6 +261,7 @@ h2 {
 
 .homepage-category > img, .homepage-product > img, .homepage-category > a > img {
     border-radius: 40px;
+    height: 100%;
 }
 
 .homepage-category > p, .homepage-category > a > p {
