@@ -1,6 +1,8 @@
 body {
     margin: 0 0;
     overflow-x: hidden;
+    background-color: #FFF9E2;
+
 }
 
 header {
@@ -11,10 +13,16 @@ header {
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
+    position: relative;
+    z-index: 10;
 }
 
 a {
     text-decoration: none;
+}
+
+#page-container {
+    background-color: #AFBFA3;
 }
 
 .nav-item {
@@ -23,18 +31,18 @@ a {
     /* background-color: red; */
 }
 
-.nav-left > img {
+#nav-left > img {
     height: 100px;
 }
 
-.nav-middle {
+#nav-middle {
     text-align: center;
     width: 50%;
     position: relative;
     margin-left: 135px;
 }
 
-.nav-middle > ul > li {
+#nav-middle > ul > li {
     display: inline-block;
     padding: 15px 2.5%;
     list-style: none;
@@ -57,7 +65,7 @@ a {
     transition: 0.4s;
 }
 
-.product-drop-down {
+#product-drop-down {
     background-color: #FFF9E2;
     font-size: 15px;
     border-radius: 15px 30px;
@@ -67,6 +75,7 @@ a {
     z-index: 1;
     font-family: 'Fredoka';
     padding: 15px 20px;
+    opacity: 0;
 }
 
 td, th {
@@ -78,12 +87,12 @@ table {
     width: 100%;
 }
 
-.nav-right {
+#nav-right {
     text-align: right;
     margin-right: 50px;
 }
 
-.nav-right > img {
+#nav-right > img {
     height: 40px;
     margin: 30px 20px;
     /* color: red; */
@@ -308,15 +317,16 @@ h2 {
     transition: all 0.5s ease;
 }
 
-.search-section {
+#search-section {
     width: 100%;
     position: absolute;
     top: 120px;
     /* background-color: green; */
     z-index: 3;
+    opacity: 0;
 }
 
-.search-bar {
+#search-bar {
     background-color: white;
     border-radius: 10px;
     width: 60%;
@@ -325,7 +335,7 @@ h2 {
     margin-right: auto;
 }
 
-.search-section > .search-bar > input {
+#search-section > #search-bar > input {
     width: 89%;
     font-size: 30px;
     padding: 7px 7px;
@@ -335,11 +345,11 @@ h2 {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.search-section > .search-bar > input:focus {
+#search-section > #search-bar > input:focus {
     outline: none;
 }
 
-.search-section > .search-bar > img {
+#search-section > #search-bar > img {
     position: relative;
     height: 25px;
     top: 2px;
@@ -403,13 +413,8 @@ h2 {
     margin-top: 200px;
 }
 
-/* TEMPORARY UNTIL JS IS IMPLEMENTED */
-.product-drop-down, .search-section {
-    display: none;
-}
 
-
-/* ============================== */
+/*============================== */
 .product-container {
     background-color: #DAE6D2;
     font-size: 20px;;
@@ -421,7 +426,7 @@ h2 {
     width: 20%;
     border-radius: 40px;
     text-align: center;
-    height: 60%;
+    height: 70%;
     padding: 0 30px;
     font-family: 'Fredoka';
 }
