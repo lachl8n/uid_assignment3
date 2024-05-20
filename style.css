@@ -21,10 +21,6 @@ a {
     text-decoration: none;
 }
 
-#page-container {
-    background-color: #AFBFA3;
-}
-
 .nav-item {
     height: 100px;
     margin: 0 20px;
@@ -48,21 +44,25 @@ a {
     list-style: none;
 }
 
-.nav-box:hover {
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-    transition: ease-in-out 0.4s;
+#products-btn {
+    width: 40%;
 }
 
 .nav-box {
     /* background-color: red; */
     font-size: 18px;
     font-family: 'Fredoka';
-    background-color: #FFF9E2;
-    color: #AFBFA3;
+    /* background-color: #FFF9E2;
+    color: #2B401D; */
     padding: 10px 20px;
     vertical-align: middle;
     border-radius: 30px;
     transition: 0.4s;
+}
+
+.nav-box:hover {
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    transition: ease-in-out 0.4s;
 }
 
 #product-drop-down {
@@ -98,6 +98,16 @@ table {
     /* color: red; */
 }
 
+.nav-green {
+    color: #FFF9E2;
+    background-color: #2B401D;
+}
+
+.nav-tan {
+    background-color: #FFF9E2;
+    color: #2B401D;
+}
+
 .container > .box-1 {
     text-align: center;
     margin-top: 40px;
@@ -108,23 +118,26 @@ table {
 }
 
 .container > .box-1 > input {
-    width: 200px;
     margin-top: 15px;
-    height: 40px;
+    height: 20%;
+    width: 80%;
 }
 
 .btn {
     background-color: #FFF9E2;
-    color: #AFBFA3;
+    color: #2B401D;
     border: none;
     border-radius: 7px;
-    font-size: 16px;
+    padding: 15px 20px;
+    font-size: 1em;
+    font-weight: 500;
     transition: 0.5s;
     z-index: 1;
+    font-family: 'Inter';
 }
 
 .btn:hover {
-    background-color: #39823D;
+    background-color: #2B401D;
     color: #FFF9E2
 }
 

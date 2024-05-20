@@ -5,54 +5,60 @@
     <mta http-equiv="X-UA-Compatible" contents="IE=edge"></mta>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js"></script>
+
+
     <link href='https://fonts.googleapis.com/css?family=Adamina' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Fredoka' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Fredoka One' rel='stylesheet'>
-    <script src="script.js"></script>
-    <title>Home</title>
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+
+    <title>The Beechworth Sweets Co.</title>
 </head>
 <body>
     <div id="search-section">
         <div id="search-bar">
             <img id="search-icon" src="assets/icons/magnifying-glass.svg"/>
-            <input type="text" autofocus/>
+            <input id="search-input" type="text"/>
             <img id="search-close" src="assets/icons/circle-xmark.svg" onclick="closeSearch()"/>
         </div>
     </div>
 
     <div id="page-container">
-        <header>
-            <div class="nav-item" id="nav-left">
-                <img src="assets/images/beechworth_logo.png">
-            </div>
-            <div class="nav-item" id="nav-middle">
-                <ul>
-                    <li><a href="index.html"><div class="nav-box">Home</div></a></li>
-                    <li><a href="about.html"><div class="nav-box">About Us</div></a></li>
-                    <li>
-                        <a href="categories.html"><div class="nav-box" id="products-btn" onmouseover="showProductDropdown()">Products</div></a>
-                        <div id="product-drop-down">
-                            <table>
-                                <tr><th>All Your Favourites</th></tr>
-                                <tr><td>Gummies and Jellies</td></tr>
-                                <tr><td>Chocolate</td></tr>
-                                <tr><td>Fudge</td></tr>
-                                <tr><td>Nougat</td></tr>
-                                <tr><td>Boiled Sweets</td></tr>
-                                <tr><td>Lollipops</td></tr>
-                                <tr><td>Truffles</td></tr>
-                                <tr><td>Lolly Jars</td></tr>
-                                <tr><td>Novelty and Giftware</td></tr>
-                            </table>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="nav-item" id="nav-right">
-                <img src="assets/icons/magnifying-glass-tan.png" onclick="showSearch();"/>
-                <img src="assets/icons/bag-shopping-tan.png"/>
-            </div>
-        </header>
+        <div class="back-green">
+            <header>
+                <div class="nav-item" id="nav-left">
+                    <img src="assets/images/beechworth_logo.png">
+                </div>
+                <div class="nav-item" id="nav-middle">
+                    <ul>
+                        <li><a href="index.html"><div class="nav-box nav-tan">Home</div></a></li>
+                        <li><a href="about.html"><div class="nav-box nav-tan">About Us</div></a></li>
+                        <li>
+                            <a href="categories.html"><div class="nav-box nav-tan" id="products-btn" onmouseover="showProductDropdown()">Products</div></a>
+                            <div id="product-drop-down">
+                                <table>
+                                    <tr><th>All Your Favourites</th></tr>
+                                    <tr><td>Gummies and Jellies</td></tr>
+                                    <tr><td>Chocolate</td></tr>
+                                    <tr><td>Fudge</td></tr>
+                                    <tr><td>Nougat</td></tr>
+                                    <tr><td>Boiled Sweets</td></tr>
+                                    <tr><td>Lollipops</td></tr>
+                                    <tr><td>Truffles</td></tr>
+                                    <tr><td>Lolly Jars</td></tr>
+                                    <tr><td>Novelty and Giftware</td></tr>
+                                </table>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="nav-item" id="nav-right">
+                    <img src="assets/icons/magnifying-glass-tan.png" onclick="showSearch();"/>
+                    <img src="assets/icons/bag-shopping-tan.png"/>
+                </div>
+            </header>
+        </div>
         
         <div id="page-content">
             <div class="container back-green">
@@ -62,7 +68,7 @@
                 <div class="box-1">
                     <p>Beechworth Sweet Co.</p>
                     <h1>Delicious childhood fantasies brought to life</h1>
-                    <input class="btn" type="button" href="products.html" value="Expore our Products"/><br>
+                    <input class="btn" type="button" href="products.html" value="Explore our Products"/><br>
                     <input class="btn" type="button" value="Jump To Your Favourites"/>
                     <h3>20 years in the running</h3>
                     <img src="assets/images/home_shopfront_cropped.jpg">

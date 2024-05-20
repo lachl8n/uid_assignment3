@@ -1,6 +1,7 @@
 function showSearch() {
     document.getElementById("search-section").style.opacity = "100%";
     document.getElementById("page-container").style.filter = "blur(8px)";
+    document.getElementById("search-input").focus();
 }
 
 function closeSearch() {
