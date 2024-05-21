@@ -11,7 +11,7 @@ function closeSearch() {
 
 function showProductDropdown() {
     document.getElementById("product-drop-down").style.opacity = "100%";
-    document.addEventListener('mouseout', ()=> {
+    document.getElementById("product-drop-down").addEventListener("mouseleave", ()=> {
         document.getElementById("product-drop-down").style.opacity = "0";
     })
 }
