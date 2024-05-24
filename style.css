@@ -1,5 +1,6 @@
 :root {
-    --pastel-green: #AFBFA3;
+    /* --pastel-green: #AFBFA3; */
+    --pastel-green: #94AA83;
     --dark-green: #2B401D;
     --tan: #FFF9E2;
 }
@@ -106,6 +107,10 @@ table {
 
 .nav-green {
     color: var(--tan);
+    background-color: var(--pastel-green);
+}
+
+.nav-green:hover {
     background-color: var(--dark-green);
 }
 
@@ -288,17 +293,16 @@ h2 {
 }
 
 .homepage-category > img, .homepage-product > img, .homepage-category > a > img {
-    border-radius: 40px;
+    border-radius: 1.7rem;
     height: 100%;
 }
 
 .homepage-category > p, .homepage-category > a > p {
     background-color: var(--pastel-green);
     color: white;
-    font-size: 1rem;
-    display: flex;
+    font-size: 1.05rem;
+    bottom: 0;
     position: absolute;
-    bottom: -1rem;
 }
 
 .homepage-product > p {
@@ -308,11 +312,11 @@ h2 {
 
 .column > p, .column > a > p{
     font-family: 'Fredoka';
-    justify-content: center;
-    align-items: center;
-    border-radius: 0 0 40px 40px;
+    border-radius: 0 0 1.7rem 1.7rem;
     width: 100%;
-    height: 3.6rem;
+    /* height: 3.3rem; */
+    padding: 1rem 0;
+    margin-bottom: 0;
 }
 
 .overlay {
@@ -320,7 +324,7 @@ h2 {
     opacity: 30%;
     height: 100%;
     width: 100%;
-    border-radius: 40px;
+    border-radius: 1.7rem;
 
     transition: 0.5s;
   
@@ -434,23 +438,30 @@ h2 {
 
 /*============================== */
 .product-container {
-    position: absolute;
-    top: 10rem;
+    position: fixed;
+    /* top: 9rem; */
+    top: 57%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
     z-index: 10;
     text-align: center;
+    opacity: 0;
+    transition: all 1s;
 }
 
 .product-content {
     background-color: #DAE6D2;
     font-size: 20px;;
-    width: 20rem;
+    width: 18rem;
     border-radius: 3rem;
     text-align: center;
-    padding: 0 2rem;
     font-family: 'Fredoka';
-    padding: 4.5rem 2rem;
+    padding-top: 4.5rem;
+    padding-bottom: 3rem;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    position: relative;
+    top: 2rem;
 }
 
 .product-container > img {
@@ -459,25 +470,20 @@ h2 {
     top: -8rem;
     left: 50%;
     transform: translateX(-50%);
-    width: 15rem;
+    width: 13rem;
     border-radius: 3rem;
 }
 
 .product-content > span > img {
     height: 1rem;
+    margin-right: 0.3rem;
 }
 
 .product-content > p {
     font-size: 1rem;
 }
 
-.product-content {
-    position: relative;
-    top: 4rem;
-}
-
 .add-to-cart-btn {
-    position: relative;
     font-family: 'Fredoka';
     background-color: #98AB8B;
     color: #FFFDF6;
@@ -485,6 +491,7 @@ h2 {
     text-align: center;
     font-size: 15px;
     transition: all 1s;
+    position: relative;
 }
 
 .add-to-cart-btn > img {
