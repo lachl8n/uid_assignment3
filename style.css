@@ -434,24 +434,29 @@ h2 {
 
 /*============================== */
 .product-container {
+    position: absolute;
+    top: 10rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    text-align: center;
+}
+
+.product-content {
     background-color: #DAE6D2;
     font-size: 20px;;
-    position: absolute;
-    top: 31rem;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 10;
     width: 20rem;
     border-radius: 3rem;
     text-align: center;
-    height: 25rem;
     padding: 0 2rem;
     font-family: 'Fredoka';
+    padding: 4.5rem 2rem;
 }
 
 .product-container > img {
     position: absolute;
-    top: -12rem;
+    z-index: 11;
+    top: -8rem;
     left: 50%;
     transform: translateX(-50%);
     width: 15rem;
@@ -471,11 +476,9 @@ h2 {
     top: 4rem;
 }
 
-.product-container > a {
-}
-
-
 .add-to-cart-btn {
+    position: relative;
+    font-family: 'Fredoka';
     background-color: #98AB8B;
     color: #FFFDF6;
     padding: 10px 27%;
