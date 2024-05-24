@@ -8,7 +8,7 @@
 body {
     margin: 0 0;
     overflow-x: hidden;
-    background-color: var(--tan);
+    background-color: var(--tan); 
 
 }
 
@@ -73,7 +73,7 @@ a {
 }
 
 #product-drop-down {
-    background-color: var(--tan);
+    /* background-color: var(--tan); */
     font-size: 15px;
     border-radius: 15px 30px;
     margin-top: 5px;
@@ -81,12 +81,15 @@ a {
     text-align: left;
     z-index: 1;
     font-family: 'Fredoka';
-    padding: 15px 20px;
+    padding: 1.2rem 20px;
     opacity: 0;
+    transition: all 1s;
 }
 
-td, th {
-    border-bottom: 0.5px solid black;
+td {
+    padding-left: 0.2rem;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
 }
 
 table {
@@ -114,9 +117,33 @@ table {
     background-color: var(--dark-green);
 }
 
+.nav-green td:hover {
+    background-color: var(--tan);
+    color: var(--dark-green);
+}
+
+.nav-green td {
+    border-bottom: 2px solid var(--tan);
+}
+
+.nav-tan td:hover {
+    /* background-color: var(--pastel-green);
+    color: white; */
+    background-color: var(--tan);
+    color: var(--dark-green);
+}
+
+.nav-tan td {
+    border-bottom: 2px solid var(--dark-green);
+}
+
 .nav-tan {
     background-color: var(--tan);
     color: var(--dark-green);
+}
+.nav-tan:hover {
+    background-color: var(--dark-green);
+    color: var(--tan);
 }
 
 .container > .box-1 {

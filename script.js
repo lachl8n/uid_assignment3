@@ -14,9 +14,10 @@ function closeSearch() {
 
 function showProductDropdown() {
     document.getElementById("product-drop-down").style.opacity = "100%";
-    document.getElementById("product-drop-down").addEventListener("mouseleave", ()=> {
-        document.getElementById("product-drop-down").style.opacity = "0";
-    })
+}
+
+function hideProductDropdown() {
+    document.getElementById("product-drop-down").style.opacity = "0";
 }
 
 function showProduct() {
@@ -30,7 +31,6 @@ function blurBackground() {
     document.getElementById("page-content").style.filter = "blur(5px)";
     document.getElementById("page-content").style.pointerEvents = "none";
     backgroundBlurred = true;
-    console.log("BRUH");
 }
 
 function unblurBackground() {

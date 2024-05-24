@@ -31,25 +31,25 @@
                     <li><a href="about.html"><div class="nav-box nav-green">About Us</div></a></li>
                     <li>
                         <a href="categories.html"><div class="nav-box nav-green" id="products-btn" onmouseover="showProductDropdown()">Products</div></a>
-                        <div id="product-drop-down">
+                        <div id="product-drop-down" class="nav-green" onmouseleave="hideProductDropdown()">
                             <table>
-                                <tr><th>All Your Favourites</th></tr>
-                                <tr><td>Gummies and Jellies</td></tr>
-                                <tr><td>Chocolate</td></tr>
-                                <tr><td>Fudge</td></tr>
-                                <tr><td>Nougat</td></tr>
-                                <tr><td>Boiled Sweets</td></tr>
-                                <tr><td>Lollipops</td></tr>
-                                <tr><td>Truffles</td></tr>
-                                <tr><td>Lolly Jars</td></tr>
-                                <tr><td>Novelty and Giftware</td></tr>
+                                <tr><td onclick="location.href='products.html'">All Your Favourites</td></tr>
+                                <tr><td onclick="location.href=''">Gummies and Jellies</td></tr>
+                                <tr><td onclick="location.href=''">Chocolate</td></tr>
+                                <tr><td onclick="location.href=''">Fudge</td></tr>
+                                <tr><td onclick="location.href=''">Nougat</td></tr>
+                                <tr><td onclick="location.href=''">Boiled Sweets</td></tr>
+                                <tr><td onclick="location.href=''">Lollipops</td></tr>
+                                <tr><td onclick="location.href=''">Truffles</td></tr>
+                                <tr><td onclick="location.href=''">Lolly Jars</td></tr>
+                                <tr><td onclick="location.href=''">Novelty and Giftware</td></tr>
                             </table>
                         </div>
                     </li>
                 </ul>
             </div>
             <div class="nav-item" id="nav-right">
-                <img src="assets/icons/magnifying-glass-green.png" onclick="showSearch();"/>
+                <img src="assets/icons/magnifying-glass-green.png" onclick="showSearch()"/>
                 <img src="assets/icons/bag-shopping-green.png"/>
             </div>
         </header>
