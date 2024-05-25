@@ -1,49 +1,47 @@
-let backgroundBlurred = false;
-
 function showSearch() {
-    document.getElementById("search-section").style.opacity = "100%";
+    document.getElementById("search-section").style.display = "flex";
     document.getElementById("search-input").focus();
     blurBackground();
 }
 
 function closeSearch() {
-    document.getElementById("search-section").style.opacity = "0";
-    document.getElementById("page-content").style.filter = "none";
+    document.getElementById("search-section").style.display = "none";
+    unblurBackground();
     document.getElementById("page-content").style.pointerEvents = "all";
 }
 
 function showProductDropdown() {
     document.getElementById("product-drop-down").style.opacity = "100%";
+    document.getElementById("products-btn").style.backgroundColor = "#2B401D";
+    document.getElementById("products-btn").style.color = "#FFF9E2";
 }
 
 function hideProductDropdown() {
     document.getElementById("product-drop-down").style.opacity = "0";
+    document.getElementById("products-btn").style.color = "#2B401D";
+    document.getElementById("products-btn").style.backgroundColor = "#FFF9E2";
 }
 
 function showProduct() {
     document.getElementById("body").style.overflow = "hidden";
     document.getElementById("product-banana").style.opacity = "100%";
+    document.getElementById("blur-overlay").style.display = "flex";
     blurBackground();
 }
 
+function hideProduct() {
+    unblurBackground();
+    document.getElementById("product-banana").style.opacity = "0";
+}
+
 function blurBackground() {
-    console.log(backgroundBlurred);
-    document.getElementById("page-content").style.filter = "blur(5px)";
-    document.getElementById("page-content").style.pointerEvents = "none";
-    backgroundBlurred = true;
+    document.getElementById("blur-overlay").style.display = "flex";
 }
 
 function unblurBackground() {
-    if (backgroundBlurred) {
-        document.getElementById("page-container").addEventListener("click", () => {
-            console.log("leave");
-            document.getElementById("page-content").style.filter = "none";
-            document.getElementById("page-content").style.pointerEvents = "all";
-            document.getElementById("body").style.overflow = "none";
-            document.getElementById("product-banana").style.opacity = "0";
-            location.reload();
-        })
+    if (document.getElementById("search-section").style.display != "none") {
+        closeSearch();
     }
-    
-    backgroundBlurred = false;
+    document.getElementById("blur-overlay").style.display = "none";
+    document.getElementById("body").style.overflow = "scroll";
 }

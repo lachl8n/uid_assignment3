@@ -15,7 +15,8 @@
 
     <title>The Beechworth Sweets Co.</title>
 </head>
-<body>
+<body id="body">
+
     <div id="search-section">
         <div id="search-bar">
             <img id="search-icon" src="assets/icons/magnifying-glass.svg"/>
@@ -23,6 +24,23 @@
             <img id="search-close" src="assets/icons/circle-xmark.svg" onclick="closeSearch()"/>
         </div>
     </div>
+
+    <div class="product-background">
+        <div class="product-container" id="product-banana">
+            <img src="assets/images/products/bananas.jpeg"/>
+            <div class="product-content">
+                <span class="rating"><img src="assets/icons/star.svg"/>4,9</span><span class="order-count">130 orders</span>
+                <h4>Bananas</h4>
+                <p>$6.00 <span class="delimiter">|</span> 180g</p>
+                <p>Go bananas! These banana flavoured sweets are sure to satisfy little monkeys and big monkeys alike!</p>
+                <hr>
+                <p class="product-information"><strong>Ingredients:</strong> Sugar, Glucose Syrup (Wheat), Invert Sugar Syrup, Gelatine, Starch (Maize) Flavour, Colour (102), Coconut Oil, Beeswax, Camauba Wax, <br><br><strong>Allergy Information:</strong> Contains Gluten, May contain traces of Milk, Peanuts and Tree Nuts</p>
+                <a class="add-to-cart-btn" href=""><img src="assets/icons/plus-offwhite.png"/>Add To Cart</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="blur-overlay" onclick="hideProduct()"></div>
 
     <div id="page-container">
         <div id="page-content">
@@ -40,7 +58,7 @@
                                 <div id="product-drop-down" class="nav-tan" onmouseleave="hideProductDropdown()">
                                     <table>
                                         <tr><td onclick="location.href='products.html'">All Your Favourites</td></tr>
-                                        <tr><td onclick="location.href=''">Gummies and Jellies</td></tr>
+                                        <tr><td onclick="location.href='products.html'">Gummies and Jellies</td></tr>
                                         <tr><td onclick="location.href=''">Chocolate</td></tr>
                                         <tr><td onclick="location.href=''">Fudge</td></tr>
                                         <tr><td onclick="location.href=''">Nougat</td></tr>
@@ -68,8 +86,11 @@
                 <div class="box-1">
                     <p>Beechworth Sweet Co.</p>
                     <h1>Delicious childhood fantasies brought to life</h1>
-                    <input class="btn" type="button" href="products.html" value="Explore our Products"/><br>
-                    <input class="btn" type="button" value="Jump To Your Favourites"/>
+                    <br><br><br>
+                    <div class="homepage-buttons">
+                        <button class="btn" onclick="location.href='products.html'">Explore Our Products</button>
+                        <button class="btn" onclick="location.href='products.html'">Jump To Your Favourites</button>
+                    </div>
                     <h3>20 years in the running</h3>
                     <img src="assets/images/home_shopfront_cropped.jpg">
                 </div>
@@ -106,7 +127,7 @@
 
                     <h2>Most Popular Products</h2>
                     <div class="product-slider">
-                        <div class="homepage-product column">
+                        <div class="homepage-product column" id="banana-icon" onclick="showProduct()">
                             <img src="assets/images/products/bananas.jpeg">
                             <p><b>Bananas</b> <br> $6.00</p>
                         </div>
