@@ -600,20 +600,20 @@ hr {
 
 .category-nav-bar {
     font-family: 'Fredoka';
+}
+
+.category-nav-bar > ul {
+    width: 100%;
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
-    margin: 0 15rem;
-    margin-left: 14.1em;
 }
 
 .category-nav-bar > ul > li {
     border: #AFBFA3 2px solid;
     color: #AFBFA3;
-    display: inline-block;
-    margin: 0 0.5px;
+    display: flex;
+    margin: 0 0.2rem;
     padding: 7px 22.5px;
     border-radius: 10px;
     transition: all 1s;
@@ -795,4 +795,12 @@ hr {
 .quantity table tr:last-of-type td:last-of-type {
     border-bottom-right-radius: 1rem;
     border-top-right-radius: 1rem;
+}
+
+#empty-cart {
+    font-family: 'Fredoka';
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

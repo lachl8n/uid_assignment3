@@ -200,10 +200,14 @@ function showCart() {
     document.getElementById("body").style.overflow = "hidden";
     
     // Iteratively adds the products selected by the user to the list in the cart
-    for (i=0; i<8; i++) {
-        if (cart[i] != 0) {
-            addProductToList(i, cart[i]);
+    if (totalCartQuantity != 0) {
+        for (i=0; i<8; i++) {
+            if (cart[i] != 0) {
+                addProductToList(i, cart[i]);
+            }
         }
+    } else {
+        document.getElementById("empty-cart"),display = "flex";
     }
 
     // Displays the total cost to the user in the cart
