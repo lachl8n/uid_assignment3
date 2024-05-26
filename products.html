@@ -12,24 +12,67 @@
     <title>The Beechworth Sweets Co. - Products</title>
 </head>
 <body id="body">
+
+    <div id="cart-container">
+        <h4>Cart</h4>
+
+        <div id="cart-contents">
+            <div class="cart-item">
+                <div class="cart-item-col-1">
+                    <img src="assets/images/products/bananas.jpeg"/>
+                </div>
+                <div class="cart-item-col-2">
+                    <h5>Bananas</h5>
+                    <p>$6.00</p>
+                </div>
+            </div>
+
+            <div class="cart-item">
+                <div class="cart-item-col-1">
+                    <img src="assets/images/products/bananas.jpeg"/>
+                </div>
+                <div class="cart-item-col-2">
+                    <h5>Bananas</h5>
+                    <p>$6.00</p>
+                </div>
+            </div>
+        </div>
+
+        <p><span>Subtotal</span><span>$$$</span></p>
+        <a id="checkout-btn" class="btn">Checkout</a>
+    </div>
+
     <div id="search-section">
         <div id="search-bar">
             <img id="search-icon" src="assets/icons/magnifying-glass.svg"/>
-            <input type="text" autofocus/>
+            <input id="search-input" type="text"/>
             <img id="search-close" src="assets/icons/circle-xmark.svg" onclick="closeSearch()"/>
         </div>
     </div>
 
     <div class="product-background">
-        <div class="product-container" id="product-banana">
-            <img src="assets/images/products/bananas.jpeg"/>
+        <div class="product-container" id="product">
+            <img id="product-image" src="assets/images/products/bananas.jpeg"/>
             <div class="product-content">
-                <span class="rating"><img src="assets/icons/star.svg"/>4,9</span><span class="order-count">130 orders</span>
-                <h4>Bananas</h4>
-                <p>$6.00 <span class="delimiter">|</span> 180g</p>
-                <p>Go bananas! These banana flavoured sweets are sure to satisfy little monkeys and big monkeys alike!</p>
+                <span class="rating">
+                   <img src="assets/icons/star.svg"/><span id="product-rating"></span>
+                </span>
+                
+                <span id="product-orders" class="order-count"></span>
+
+                <h4 id="product-name"></h4>
+
+                <p>
+                    <span id="product-price"></span>
+                    <span class="delimiter">|</span>
+                    <span id="product-weight"></span>
+                </p>
+                
+                <p id="product-description"></p>
                 <hr>
-                <p class="product-information"><strong>Ingredients:</strong> Sugar, Glucose Syrup (Wheat), Invert Sugar Syrup, Gelatine, Starch (Maize) Flavour, Colour (102), Coconut Oil, Beeswax, Camauba Wax, <br><br><strong>Allergy Information:</strong> Contains Gluten, May contain traces of Milk, Peanuts and Tree Nuts</p>
+                <p id="product-ingredients" class="product-information"></p>
+                <p id="product-allergens" class="product-information"></p>
+                <br>
                 <a class="add-to-cart-btn" href=""><img src="assets/icons/plus-offwhite.png"/>Add To Cart</a>
             </div>
         </div>
@@ -47,7 +90,7 @@
                     <ul>
                         <li><a href="index.html"><div class="nav-box nav-green">Home</div></a></li>
                         <li><a href="about.html"><div class="nav-box nav-green">About Us</div></a></li>
-                        <li>
+                        <li class="products-nav-container">
                             <a href="categories.html"><div class="nav-box nav-green" id="products-btn" onmouseover="showProductDropdown()">Products</div></a>
                             <div id="product-drop-down" class="nav-green" onmouseleave="hideProductDropdown()">
                                 <table>
@@ -86,38 +129,38 @@
             </div>
 
             <div class="product-slider">
-                <div class="homepage-product column" id="banana-icon" onclick="showProduct()">
+                <div class="homepage-product column" id="bananas" onclick="showProduct(this.id)">
                     <img src="assets/images/products/bananas.jpeg">
                     <p><b>Bananas</b> <br> $6.00</p>
                 </div>
-                <div class="homepage-product column">
+                <div class="homepage-product column" id="conversation-hearts" onclick="showProduct(this.id)">
                     <img src="assets/images/products/conversation-hearts.png">
                     <p><b>Conversation Hearts</b> <br> $6.50</p>
                 </div>
                 <div class="homepage-product column">
-                    <img src="assets/images/products/blue-raspberry-wheels.jpg">
+                    <img src="assets/images/products/blue-raspberry-wheels.jpg" id="blue-raspberry-wheels" onclick="showProduct(this.id)">
                     <p><b>Blue Raspbery Wheels</b> <br> $6.00</p>
                 </div>
-                <div class="homepage-product column">
+                <div class="homepage-product column" id="candy-bullets" onclick="showProduct(this.id)">
                     <img src="assets/images/products/candy-bullets.jpeg">
                     <p><b>Candy Bullets</b> <br> $6.00</p>
                 </div>
             </div>
 
             <div class="product-slider">
-                <div class="homepage-product column">
+                <div class="homepage-product column" id="cherry-wheels" onclick="showProduct(this.id)">
                     <img src="assets/images/products/cherry-wheels.jpeg">
                     <p><b>Cherry Wheels</b> <br> $6.50</p>
                 </div>
-                <div class="homepage-product column">
+                <div class="homepage-product column" id="almond-brittle" onclick="showProduct(this.id)">
                     <img src="assets/images/products/almond-brittle.jpeg">
                     <p><b>Almond Brittle</b> <br> $7.00</p>
                 </div>
-                <div class="homepage-product column">
+                <div class="homepage-product column" id="dolly-mix" onclick="showProduct(this.id)">
                     <img src="assets/images/products/dolly-mix.jpeg">
                     <p><b>Dolly Mix</b> <br> $6.00</p>
                 </div>
-                <div class="homepage-product column">
+                <div class="homepage-product column" id="fizzoes" onclick="showProduct(this.id)">
                     <img src="assets/images/products/fizzoes.jpeg">
                     <p><b>Fizzoes</b> <br> $6.50</p>
                 </div>
