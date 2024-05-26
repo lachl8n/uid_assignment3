@@ -24,6 +24,15 @@
                 <div class="cart-item-col-2">
                     <h5>Bananas</h5>
                     <p>$6.00</p>
+                    <div class="quantity">
+                        <table>
+                            <tr>
+                                <td class="quantity-col quantity-col-1" style="border-right: none;"><img src="assets/icons/minus.svg"/></td>
+                                <td id="quantity-1" class="quantity-col quantity-col-2">55</td>
+                                <td class="quantity-col quantity-col-3" style="border-left: none;" onclick="incrementQuantity()"><img src="assets/icons/plus.svg"/></td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
             </div>
 
@@ -34,12 +43,60 @@
                 <div class="cart-item-col-2">
                     <h5>Bananas</h5>
                     <p>$6.00</p>
+                    <div class="quantity">
+                        <table>
+                            <tr>
+                                <td class="quantity-col quantity-col-1" style="border-right: none;"><img src="assets/icons/minus.svg"/></td>
+                                <td id="quantity-2 quantity-col-2" class="quantity-col">55</td>
+                                <td class="quantity-col quantity-col-3" style="border-left: none;"><img src="assets/icons/plus.svg"/></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="cart-item">
+                <div class="cart-item-col-1">
+                    <img src="assets/images/products/bananas.jpeg"/>
+                </div>
+                <div class="cart-item-col-2">
+                    <h5>Bananas</h5>
+                    <p>$6.00</p>
+                    <div class="quantity">
+                        <table>
+                            <tr>
+                                <td class="quantity-col quantity-col-1" style="border-right: none;"><img src="assets/icons/minus.svg"/></td>
+                                <td id="quantity-1" class="quantity-col quantity-col-2">55</td>
+                                <td class="quantity-col quantity-col-3" style="border-left: none;" onclick="incrementQuantity()"><img src="assets/icons/plus.svg"/></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cart-item">
+                <div class="cart-item-col-1">
+                    <img src="assets/images/products/bananas.jpeg"/>
+                </div>
+                <div class="cart-item-col-2">
+                    <h5>Bananas</h5>
+                    <p>$6.00</p>
+                    <div class="quantity">
+                        <table>
+                            <tr>
+                                <td class="quantity-col quantity-col-1" style="border-right: none;"><img src="assets/icons/minus.svg"/></td>
+                                <td id="quantity-1" class="quantity-col quantity-col-2">55</td>
+                                <td class="quantity-col quantity-col-3" style="border-left: none;" onclick="incrementQuantity()"><img src="assets/icons/plus.svg"/></td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <p><span>Subtotal</span><span>$$$</span></p>
-        <a id="checkout-btn" class="btn">Checkout</a>
+        <p id="cart-subtotal"><span id="subtotal-title">Subtotal</span><span id="subtotal">$$$</span></p>
+        <a class="cart-btn" href="">Checkout<img src="assets/icons/circle-arrow-right.svg"/></a>
     </div>
 
     <div id="search-section">
@@ -111,7 +168,7 @@
                 </div>
                 <div class="nav-item" id="nav-right">
                     <img src="assets/icons/magnifying-glass-green.png" onclick="showSearch()"/>
-                    <img src="assets/icons/bag-shopping-green.png"/>
+                    <img src="assets/icons/bag-shopping-green.png" onclick="showCart()"/>
                 </div>
             </header>
 

@@ -3,6 +3,7 @@
     --pastel-green: #94AA83;
     --dark-green: #2B401D;
     --tan: #FFF9E2;
+    --grey: #c2c2c2;
 }
 
 body {
@@ -635,20 +636,24 @@ hr {
     display: none;
 }
 
+/* Cart */
 #cart-container {
     background-color: white;
     position: fixed;
     /* top: 9rem; */
-    top: 25%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    transition: all 1s;
+    transition: ease 1s;
     width: 33rem;
     max-height: 40rem;
     z-index: 15;
     border-radius: 1.7rem;
     box-shadow: 0 6px 6px hsl(0deg 0% 0% / 0.3);
+    padding-bottom: 2rem;
+    visibility: hidden;
+    opacity: 0;
 }
 
 #cart-container h4 {
@@ -661,17 +666,26 @@ hr {
 #cart-contents {
     width: 90%;
     margin: auto;
-    text-align: left;
+    max-height: 27rem;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .cart-item {
     background-color: #FAF9F6;
+    width: 90%;
     height: 6.5rem;
     padding: 0.5rem 0.5rem;
     box-shadow: 0 6px 6px hsl(0deg 0% 0% / 0.3);
     margin-bottom: 0.5rem;
     border-radius: 1.7rem;
     display: flex;
+    margin: 1rem auto;
+}
+
+.cart-item > .cart-item-col-1 > img {
+    height: 100%;
+    border-radius: 1.7rem;
 }
 
 .cart-item-col-2 {
@@ -690,7 +704,83 @@ hr {
     margin-top: -1rem;
 }
 
-.cart-item > .cart-item-col-1 > img {
-    height: 100%;
+.cart-btn {
+    font-family: 'Fredoka';
+    background-color: #E6E5E5;
+    color: black;
+    padding: 0.4rem 27%;
+    text-align: center;
+    font-size: 1rem;
+    transition: ease-out 1s;
+    position: relative;
+}
+
+.cart-btn > img {
+    height: 10px;
+    margin-left: 0.5rem;
+}
+
+.cart-btn:hover {
+    background-color: gray;
+    color: white;
+}
+
+#cart-subtotal {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.2rem;
+    font-family: 'Fredoka';
+}
+
+/* Cart Quantity Alterations Section */
+.quantity {
+    display: flex;
+    position: relative;
+    top: -2.8rem;
+    left: 11rem;
     border-radius: 1.7rem;
+}
+
+.quantity table {
+    border-collapse: collapse;
+    text-align: center;
+    border-radius: 1.7rem;
+}
+
+.quantity table td {
+    border: 1px solid var(--grey);
+    height: 2rem;
+    width: 2rem;
+    text-align: center;
+    transition: ease 1s;
+}
+
+.quantity-col-1:hover, .quantity-col-3:hover {
+    background-color: var(--grey);
+}
+
+.quantity-col-2, .quantity-col-3 {
+    padding-right: 0.2rem;
+}
+
+.quantity-col {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Fredoka';
+}
+
+.quantity-col img {
+    width: 1.2rem;
+    margin-right: 0.1rem;
+}
+
+.quantity table tr:last-of-type td:first-of-type {
+    border-bottom-left-radius: 1rem;
+    border-top-left-radius: 1rem;
+}
+.quantity table tr:last-of-type td:last-of-type {
+    border-bottom-right-radius: 1rem;
+    border-top-right-radius: 1rem;
 }

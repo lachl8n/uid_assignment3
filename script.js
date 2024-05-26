@@ -146,3 +146,12 @@ function unblurBackground() {
     document.getElementById("blur-overlay").style.display = "none";
     document.getElementById("body").style.overflow = "scroll";
 }
+
+function incrementQuantity() {
+    document.getElementById("quantity-1").textContent = parseInt(document.getElementById("quantity-1").textContent) + 1;
+}
+
+function showCart() {
+    document.getElementById("cart-container").style.visibility = "visible";
+    document.getElementById("cart-container").style.opacity = "100%";
+}
