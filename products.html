@@ -17,6 +17,8 @@
         <h4>Cart</h4>
 
         <div id="cart-contents">
+            
+<!--             
             <div class="cart-item">
                 <div class="cart-item-col-1">
                     <img src="assets/images/products/bananas.jpeg"/>
@@ -38,61 +40,37 @@
 
             <div class="cart-item">
                 <div class="cart-item-col-1">
-                    <img src="assets/images/products/bananas.jpeg"/>
+                    <img src="assets/images/products/conversation-hearts.png">
                 </div>
                 <div class="cart-item-col-2">
-                    <h5>Bananas</h5>
-                    <p>$6.00</p>
-                    <div class="quantity">
-                        <table>
-                            <tr>
-                                <td class="quantity-col quantity-col-1" style="border-right: none;"><img src="assets/icons/minus.svg"/></td>
-                                <td id="quantity-2 quantity-col-2" class="quantity-col">55</td>
-                                <td class="quantity-col quantity-col-3" style="border-left: none;"><img src="assets/icons/plus.svg"/></td>
-                            </tr>
-                        </table>
+                    <div class=cart-item-row>
+                        <h5>Bananas</h5>
+                    </div>
+
+                    <div class="cart-item-row cart-item-row-2">
+                        <div class="cart-item-row-col">
+                            <p>$6.00</p>
+                        </div>
+                        <div class="cart-item-row-col">
+                            <div class="quantity">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td class="quantity-col quantity-col-1" style="border-right: none;">
+                                                <img src="assets/icons/minus.svg">
+                                            </td>
+                                            <td class="quantity-col quantity-col-2" id="quantity-10">1</td>
+                                            <td class="quantity-col quantity-col-3" style="border-left: none;">
+                                                <img src="assets/icons/plus.svg">
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-
-            <div class="cart-item">
-                <div class="cart-item-col-1">
-                    <img src="assets/images/products/bananas.jpeg"/>
-                </div>
-                <div class="cart-item-col-2">
-                    <h5>Bananas</h5>
-                    <p>$6.00</p>
-                    <div class="quantity">
-                        <table>
-                            <tr>
-                                <td class="quantity-col quantity-col-1" style="border-right: none;"><img src="assets/icons/minus.svg"/></td>
-                                <td id="quantity-1" class="quantity-col quantity-col-2">55</td>
-                                <td class="quantity-col quantity-col-3" style="border-left: none;" onclick="incrementQuantity()"><img src="assets/icons/plus.svg"/></td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-            </div>
-
-            <div class="cart-item">
-                <div class="cart-item-col-1">
-                    <img src="assets/images/products/bananas.jpeg"/>
-                </div>
-                <div class="cart-item-col-2">
-                    <h5>Bananas</h5>
-                    <p>$6.00</p>
-                    <div class="quantity">
-                        <table>
-                            <tr>
-                                <td class="quantity-col quantity-col-1" style="border-right: none;"><img src="assets/icons/minus.svg"/></td>
-                                <td id="quantity-1" class="quantity-col quantity-col-2">55</td>
-                                <td class="quantity-col quantity-col-3" style="border-left: none;" onclick="incrementQuantity()"><img src="assets/icons/plus.svg"/></td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-            </div>
+            </div> -->
         </div>
 
         <p id="cart-subtotal"><span id="subtotal-title">Subtotal</span><span id="subtotal">$$$</span></p>
@@ -103,13 +81,13 @@
         <div id="search-bar">
             <img id="search-icon" src="assets/icons/magnifying-glass.svg"/>
             <input id="search-input" type="text"/>
-            <img id="search-close" src="assets/icons/circle-xmark.svg" onclick="closeSearch()"/>
+            <img id="search-close" src="assets/icons/circle-xmark.svg" onclick="unblurBackground()"/>
         </div>
     </div>
 
     <div class="product-background">
         <div class="product-container" id="product">
-            <img id="product-image" src="assets/images/products/bananas.jpeg"/>
+            <img id="product-image" src=""/>
             <div class="product-content">
                 <span class="rating">
                    <img src="assets/icons/star.svg"/><span id="product-rating"></span>
@@ -130,12 +108,12 @@
                 <p id="product-ingredients" class="product-information"></p>
                 <p id="product-allergens" class="product-information"></p>
                 <br>
-                <a class="add-to-cart-btn" href=""><img src="assets/icons/plus-offwhite.png"/>Add To Cart</a>
+                <a class="add-to-cart-btn" onclick="addToCart()"><img src="assets/icons/plus-offwhite.png"/>Add To Cart</a>
             </div>
         </div>
     </div>
 
-    <div id="blur-overlay" onclick="hideProduct()"></div>
+    <div id="blur-overlay" onclick="unblurBackground()"></div>
 
     <div class="container back-tan" id="page-container">
         <div id="page-content">

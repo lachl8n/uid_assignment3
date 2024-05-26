@@ -1,23 +1,28 @@
+let blurOption;
+
+let cart = [0, 0, 0, 0, 0, 0, 0, 0];
+let totalCartQuantity = 0;
+let totalCost = 0.00;
+
+let currentProductID;
+
 function showSearch() {
-    document.getElementById("search-section").style.display = "flex";
+    document.getElementById("search-section").style.visibility = "visible";
     document.getElementById("search-input").focus();
     blurBackground();
-}
-
-function closeSearch() {
-    document.getElementById("search-section").style.display = "none";
-    unblurBackground();
-    document.getElementById("page-content").style.pointerEvents = "all";
+    blurOption = 2;
 }
 
 function showProductDropdown() {
     document.getElementById("product-drop-down").style.display = "table";
+    document.getElementById("product-drop-down").style.opacity = "100%";
     document.getElementById("products-btn").style.backgroundColor = "#2B401D";
     document.getElementById("products-btn").style.color = "#FFF9E2";
 }
 
 function hideProductDropdown() {
     document.getElementById("product-drop-down").style.display = "none";
+    document.getElementById("product-drop-down").style.opacity = "0";
     document.getElementById("products-btn").style.color = "#2B401D";
     document.getElementById("products-btn").style.backgroundColor = "#FFF9E2";
 }
@@ -33,7 +38,8 @@ function showProduct(id) {
     let productOrders;
     let productWeight;
 
-    console.log(id);
+    currentProductID = id;
+
     if (id == "bananas") {
         productImage = "assets/images/products/bananas.jpeg";
         productName = "Bananas";
@@ -125,9 +131,13 @@ function showProduct(id) {
     
 
     document.getElementById("body").style.overflow = "hidden";
+
+    // document.getElementById("product").style.display = "flex";
+    document.getElementById("product").style.visibility = "visible";
     document.getElementById("product").style.opacity = "100%";
-    document.getElementById("blur-overlay").style.display = "flex";
+    document.getElementById("product").style.pointerEvents = "all";
     blurBackground();
+    blurOption = 1;
 }
 
 function hideProduct() {
@@ -136,14 +146,26 @@ function hideProduct() {
 }
 
 function blurBackground() {
-    document.getElementById("blur-overlay").style.display = "flex";
+    document.getElementById("blur-overlay").style.visibility = "visible";
 }
 
 function unblurBackground() {
-    // if (document.getElementById("search-section").style.display != "none") {
-    //     closeSearch();
-    // }
-    document.getElementById("blur-overlay").style.display = "none";
+
+    if (blurOption == 1) {
+        document.getElementById("product").style.opacity = "0";
+        //document.getElementById("product").style.display = "none";
+        document.getElementById("product").style.pointerEvents = "none";
+    } else if (blurOption == 2) {
+        document.getElementById("search-section").style.visibility = "hidden";
+        document.getElementById("page-content").style.pointerEvents = "all";
+    } else if (blurOption == 3) {
+        document.getElementById("cart-container").style.visibility = "hidden";
+        document.getElementById("cart-container").style.opacity = "0";
+        clearCart();
+        totalCost = 0;
+    }
+
+    document.getElementById("blur-overlay").style.visibility = "hidden";
     document.getElementById("body").style.overflow = "scroll";
 }
 
@@ -154,4 +176,178 @@ function incrementQuantity() {
 function showCart() {
     document.getElementById("cart-container").style.visibility = "visible";
     document.getElementById("cart-container").style.opacity = "100%";
+    document.getElementById("body").style.overflow = "hidden";
+    //console.log(totalCartQuantity);
+    for (i=0; i<8; i++) {
+        if (cart[i] != 0) {
+            addProductToList(i, cart[i]);
+        }
+    }
+
+    document.getElementById("subtotal").textContent = "$" + totalCost.toFixed(2);
+
+    blurBackground();
+    blurOption = 3;
+}
+
+function addToCart() {
+    let productIndex = 0;
+    if (currentProductID == "bananas") {
+        productIndex = 0;
+    } else if (currentProductID == "conversation-hearts") {
+        productIndex = 1;
+    } else if (currentProductID == "blue-raspberry-wheels") {
+        productIndex = 2;
+    } else if (currentProductID == "candy-bullets") {
+        productIndex = 3;
+    } else if (currentProductID == "cherry-wheels") {
+        productIndex = 4;
+    } else if (currentProductID == "almond-brittle") {
+        productIndex = 5;
+    } else if (currentProductID == "dolly-mix") {
+        productIndex = 6;
+    } else if (currentProductID == "fizzoes") {
+        productIndex = 7;
+    }
+
+    cart[productIndex]++;
+
+    totalCartQuantity++;
+    unblurBackground();
+}
+
+function addProductToList(productIndex, quantity) {
+    let productName;
+    let productPrice;
+    let productQuantity = quantity;
+    let productImageDirectory;
+
+    if (productIndex == 0) {
+        productName = "Bananas";
+        productPrice = "6.00";
+        productImageDirectory = "assets/images/products/bananas.jpeg"
+    } else if (productIndex == 1) {
+        productName = "Conversation Hearts";
+        productPrice = "6.50";
+        productImageDirectory = "assets/images/products/conversation-hearts.png"
+    } else if (productIndex == 2) {
+        productName = "Blue Raspberry Wheels";
+        productPrice = "6.00";
+        productImageDirectory = "assets/images/products/blue-raspberry-wheels.jpg"
+    } else if (productIndex == 3) {
+        productName = "Candy Bullets";
+        productPrice = "6.00";
+        productImageDirectory = "assets/images/products/candy-bullets.jpeg"
+    } else if (productIndex == 4) {
+        productName = "Cherry Wheels";
+        productPrice = "6.50";
+        productImageDirectory = "assets/images/products/cherry-wheels.jpeg"
+    } else if (productIndex == 5) {
+        productName = "Almond Brittle";
+        productPrice = "7.00";
+        productImageDirectory = "assets/images/products/almond-brittle.jpeg"
+    } else if (productIndex == 6) {
+        productName = "Dolly Mix";
+        productPrice = "6.00";
+        productImageDirectory = "assets/images/products/dolly-mix.jpeg"
+    } else if (productIndex == 7) {
+        productName = "Fizzoes";
+        productPrice = "6.50";
+        productImageDirectory = "assets/images/products/fizzoes.jpeg"
+    }
+
+    totalCost += parseFloat(productPrice);
+
+    createNewProductInCart(productName, ("$" + productPrice), productImageDirectory, productQuantity);
+}
+
+function createNewProductInCart(name, price, imageDirectory, quantity) {
+    let cartItemDiv = document.createElement('div');
+    cartItemDiv.setAttribute("class", "cart-item");
+
+    let cartItemCol1 = document.createElement('div');
+    cartItemCol1.setAttribute("class", "cart-item-col-1");
+    let productImage = document.createElement("img");
+    productImage.setAttribute("src", imageDirectory);
+    
+    cartItemCol1.append(productImage);
+
+
+    let cartItemCol2 = document.createElement('div');
+    cartItemCol2.setAttribute("class", "cart-item-col-2");
+
+    let cartItemRow1 = document.createElement('div');
+    cartItemRow1.setAttribute("class", "cart-item-row");
+    let productName = document.createElement('h5');
+    productName.textContent = name;
+    cartItemRow1.appendChild(productName);
+
+    let cartItemRow2 = document.createElement('div');
+    cartItemRow2.setAttribute("class", "cart-item-row cart-item-row-2");
+
+    let cartItemRowCol1 = document.createElement('div');
+    cartItemRowCol1.setAttribute("class", "cart-item-row-col");
+    let productPrice = document.createElement('p');
+    productPrice.textContent = price;
+    cartItemRowCol1.appendChild(productPrice);
+
+    let cartItemRowCol2 = document.createElement('div');
+    cartItemRowCol2.setAttribute("class", "cart-item-row-col");
+
+    let quantityContainer = document.createElement('div');
+    quantityContainer.setAttribute("class", "quantity");
+    let quantityTable = document.createElement('table');
+    let quantityTableBody = document.createElement('tbody');
+    let quantityTableRow = document.createElement('tr');
+
+    let quantityTableDataCol1 = document.createElement('td');
+    quantityTableDataCol1.setAttribute("class", "quantity-col quantity-col-1");
+    quantityTableDataCol1.style.borderRight = "none";
+    let minusIcon = document.createElement('img');
+    minusIcon.setAttribute("src", "assets/icons/minus.svg");
+
+    quantityTableDataCol1.appendChild(minusIcon);
+
+    let quantityTableDataCol2 = document.createElement('td');
+    quantityTableDataCol2.setAttribute("class", "quantity-col quantity-col-2");
+    quantityTableDataCol2.setAttribute("id", "quantity-10");
+    quantityTableDataCol2.textContent = quantity;
+    
+    let quantityTableDataCol3 = document.createElement('td');
+    quantityTableDataCol3.setAttribute("class", "quantity-col quantity-col-3");
+    quantityTableDataCol3.style.borderLeft = "none";
+    let plusIcon = document.createElement('img');
+    plusIcon.setAttribute("src", "assets/icons/plus.svg");
+
+    quantityTableDataCol3.appendChild(plusIcon);
+
+
+    quantityTableRow.appendChild(quantityTableDataCol1);
+    quantityTableRow.appendChild(quantityTableDataCol2);
+    quantityTableRow.appendChild(quantityTableDataCol3);
+
+    quantityTableBody.append(quantityTableRow);
+    
+    quantityTable.append(quantityTableBody);
+
+    quantityContainer.appendChild(quantityTable);
+
+    cartItemRowCol2.appendChild(quantityContainer);
+
+    cartItemRow2.appendChild(cartItemRowCol1);
+    cartItemRow2.appendChild(cartItemRowCol2);
+
+    cartItemCol2.appendChild(cartItemRow1);
+    cartItemCol2.appendChild(cartItemRow2);
+
+    cartItemDiv.appendChild(cartItemCol1);
+    cartItemDiv.appendChild(cartItemCol2);
+
+    document.querySelector("#cart-contents").appendChild(cartItemDiv);
+}
+
+function clearCart() {
+    document.querySelectorAll(".cart-item").forEach( (x) => {
+        x.remove();
+    })
 }

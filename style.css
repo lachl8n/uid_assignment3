@@ -81,8 +81,10 @@ a {
     z-index: 1;
     font-family: 'Fredoka';
     padding: 1.2rem 20px;
-    transition: all 1s;
+    transition: all 0.5;
     display: none;
+    opacity: 0;
+    transition: all 0.5;
 }
 
 .products-nav-container {
@@ -179,7 +181,7 @@ table {
     width: 100%;
     font-size: 1em;
     font-weight: 500;
-    transition: 0.5s;
+    transition: 1s;
     font-family: 'Inter';
     max-width: 14rem;
     margin: 0.5rem 0;
@@ -323,7 +325,7 @@ h2 {
     margin-right: auto;
     width: 20%;
     position: relative;
-    transition: transform 0.5s;
+    transition: transform 1s;
     z-index: 1;
 }
 
@@ -336,7 +338,7 @@ h2 {
     margin-right: auto;
     width: 20%;
     position: relative;
-    transition: transform 0.5s;
+    transition: transform 1s;
     z-index: 1;
 }
 
@@ -384,7 +386,7 @@ h2 {
     width: 100%;
     border-radius: 1.7rem;
 
-    transition: 0.5s;
+    transition: 1s;
   
     display: flex;
     position: absolute;
@@ -394,7 +396,7 @@ h2 {
 
 .homepage-category:hover .overlay {
     opacity: 0;
-    transition: all 0.5s ease;
+    transition: all 1s ease;
 }
 
 #search-section {
@@ -403,8 +405,8 @@ h2 {
     top: 120px;
     /* background-color: green; */
     z-index: 15;
-    display: none;
-    transition: ease 1s;
+    visibility: hidden;
+    transition: all 0.5;
 }
 
 #search-bar {
@@ -504,13 +506,13 @@ h2 {
     transform: translate(-50%, -50%);
     text-align: center;
     opacity: 0;
+    visibility: hidden;
+    /* display: none; */
     transition: ease-in-out 1s;
     pointer-events: none;
-}
-
-#product {
     z-index: 15;
 }
+
 
 .product-content {
     background-color: #DAE6D2;
@@ -553,7 +555,7 @@ h2 {
     padding: 10px 27%;
     text-align: center;
     font-size: 15px;
-    transition: all 1s;
+    transition: all 0.5;
     position: relative;
 }
 
@@ -614,7 +616,7 @@ hr {
     margin: 0 0.5px;
     padding: 7px 22.5px;
     border-radius: 10px;
-    transition: all 0.5s;
+    transition: all 1s;
 }
 
 #selected-category, .category-nav-bar > ul > li:hover {
@@ -633,7 +635,7 @@ hr {
     align-items: center;
     z-index: 12;
 
-    display: none;
+    visibility: hidden;
 }
 
 /* Cart */
@@ -645,7 +647,7 @@ hr {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    transition: ease 1s;
+    transition: ease 0.5;
     width: 33rem;
     max-height: 40rem;
     z-index: 15;
@@ -678,18 +680,14 @@ hr {
     padding: 0.5rem 0.5rem;
     box-shadow: 0 6px 6px hsl(0deg 0% 0% / 0.3);
     margin-bottom: 0.5rem;
-    border-radius: 1.7rem;
+    border-radius: 1rem;
     display: flex;
     margin: 1rem auto;
 }
 
 .cart-item > .cart-item-col-1 > img {
     height: 100%;
-    border-radius: 1.7rem;
-}
-
-.cart-item-col-2 {
-    padding: 0 1rem;
+    border-radius: 1rem;
 }
 
 .cart-item-col-2 h5 {
@@ -701,7 +699,22 @@ hr {
 .cart-item-col-2 p {
     font-family: 'Fredoka';
     font-size: 1.3rem;
-    margin-top: -1rem;
+}
+
+.cart-item-row {
+    width: 100%;
+    text-align: left;
+    padding-left: 0.6rem;
+}
+
+.cart-item-row-2 {
+    margin-top: -3rem;
+}
+
+.cart-item-row-col {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .cart-btn {
@@ -711,7 +724,7 @@ hr {
     padding: 0.4rem 27%;
     text-align: center;
     font-size: 1rem;
-    transition: ease-out 1s;
+    transition: ease-out 0.5;
     position: relative;
 }
 
@@ -735,11 +748,10 @@ hr {
 
 /* Cart Quantity Alterations Section */
 .quantity {
-    display: flex;
-    position: relative;
-    top: -2.8rem;
-    left: 11rem;
     border-radius: 1.7rem;
+    position: relative;
+    left: 8.1rem;
+    bottom: -1.2rem;
 }
 
 .quantity table {
@@ -753,7 +765,7 @@ hr {
     height: 2rem;
     width: 2rem;
     text-align: center;
-    transition: ease 1s;
+    transition: ease 0.5;
 }
 
 .quantity-col-1:hover, .quantity-col-3:hover {
