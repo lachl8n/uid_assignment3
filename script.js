@@ -7,24 +7,36 @@ let totalCost = 0.00;
 let currentProductID;
 
 function showSearch() {
+    // Display the search bar
     document.getElementById("search-section").style.visibility = "visible";
     document.getElementById("search-input").focus();
+
+    // Blurs the background of the webpage and indicates the use of the blur
     blurBackground();
     blurOption = 2;
 }
 
 function showProductDropdown() {
+    // Display the products dropdown menu
     document.getElementById("product-drop-down").style.display = "table";
     document.getElementById("product-drop-down").style.opacity = "100%";
     document.getElementById("products-btn").style.backgroundColor = "#2B401D";
     document.getElementById("products-btn").style.color = "#FFF9E2";
 }
 
-function hideProductDropdown() {
+function hideProductDropdown(baseColour) {
+    // Hides the products dropdown menu
     document.getElementById("product-drop-down").style.display = "none";
     document.getElementById("product-drop-down").style.opacity = "0";
-    document.getElementById("products-btn").style.color = "#2B401D";
-    document.getElementById("products-btn").style.backgroundColor = "#FFF9E2";
+
+    // Determines the colour to return the "Products" button to
+    if (baseColour == 'green') {
+        document.getElementById("products-btn").style.color = "#FFF9E2";
+        document.getElementById("products-btn").style.backgroundColor = "#94AA83";
+    } else {
+        document.getElementById("products-btn").style.color = "#2B401D";
+        document.getElementById("products-btn").style.backgroundColor = "#FFF9E2";
+    }
 }
 
 function showProduct(id) {
@@ -39,7 +51,8 @@ function showProduct(id) {
     let productWeight;
 
     currentProductID = id;
-
+    
+    // Uses the ID of the div in which the function was called to determine which product was selected
     if (id == "bananas") {
         productImage = "assets/images/products/bananas.jpeg";
         productName = "Bananas";
@@ -119,6 +132,7 @@ function showProduct(id) {
         productIngredients = "Ingredients: Sugar, Glucose, Flavour, Colours (102, 110, 122, 123, 124, 133, 142), Food Acids (330, 334), Sodium Bicarbonate (500)";
     }
 
+    // Changes all values in the product pop-up display to the selected product
     document.getElementById("product-image").src=productImage;
     document.getElementById("product-name").textContent = productName;
     document.getElementById("product-price").textContent = productPrice;
@@ -130,27 +144,32 @@ function showProduct(id) {
     document.getElementById("product-allergens").textContent = productAllergens;
     
 
+    // Prevents the user from scrolling while the pop-up is visible
     document.getElementById("body").style.overflow = "hidden";
 
-    // document.getElementById("product").style.display = "flex";
+    // Displays the product-pop up to the user
     document.getElementById("product").style.visibility = "visible";
     document.getElementById("product").style.opacity = "100%";
     document.getElementById("product").style.pointerEvents = "all";
+
+    // Blurs the background of the webpage and indicates the use of the blur
     blurBackground();
     blurOption = 1;
 }
 
 function hideProduct() {
+    // Hides the product pop-up by removing the blur overlay and making the pop-up invisible
     unblurBackground();
     document.getElementById("product").style.opacity = "0";
 }
 
 function blurBackground() {
+    // Displays the background to the user by removing the blur overlay
     document.getElementById("blur-overlay").style.visibility = "visible";
 }
 
 function unblurBackground() {
-
+    // Determines appropriate action when unburring the webpage depending on the action to reverse
     if (blurOption == 1) {
         document.getElementById("product").style.opacity = "0";
         //document.getElementById("product").style.display = "none";
@@ -170,27 +189,33 @@ function unblurBackground() {
 }
 
 function incrementQuantity() {
+    // Increments the quantity of the product in the cart
     document.getElementById("quantity-1").textContent = parseInt(document.getElementById("quantity-1").textContent) + 1;
 }
 
 function showCart() {
+    // Display the cart pop-up to the user
     document.getElementById("cart-container").style.visibility = "visible";
     document.getElementById("cart-container").style.opacity = "100%";
     document.getElementById("body").style.overflow = "hidden";
-    //console.log(totalCartQuantity);
+    
+    // Iteratively adds the products selected by the user to the list in the cart
     for (i=0; i<8; i++) {
         if (cart[i] != 0) {
             addProductToList(i, cart[i]);
         }
     }
 
+    // Displays the total cost to the user in the cart
     document.getElementById("subtotal").textContent = "$" + totalCost.toFixed(2);
 
+    // Blurs the background of the webpage and indicates the use of the blur
     blurBackground();
     blurOption = 3;
 }
 
 function addToCart() {
+    // Uses the ID of the product to determine which product to add to the cart
     let productIndex = 0;
     if (currentProductID == "bananas") {
         productIndex = 0;
@@ -210,9 +235,13 @@ function addToCart() {
         productIndex = 7;
     }
 
+    // Adds the product to a list representing the cart
     cart[productIndex]++;
 
+    // Increments the quantity of total products selected
     totalCartQuantity++;
+
+    // Unblurs the background
     unblurBackground();
 }
 
@@ -222,6 +251,7 @@ function addProductToList(productIndex, quantity) {
     let productQuantity = quantity;
     let productImageDirectory;
 
+    // Using the index in the list, determining the type of product it represents and provides the relevant information
     if (productIndex == 0) {
         productName = "Bananas";
         productPrice = "6.00";
@@ -256,97 +286,122 @@ function addProductToList(productIndex, quantity) {
         productImageDirectory = "assets/images/products/fizzoes.jpeg"
     }
 
-    totalCost += parseFloat(productPrice);
+    // Adds cost of product to total cost
+    totalCost += parseFloat(productPrice) * parseFloat(productQuantity);
 
+    // Creates a new HTML element to represent a product in the list in the cart
     createNewProductInCart(productName, ("$" + productPrice), productImageDirectory, productQuantity);
 }
 
 function createNewProductInCart(name, price, imageDirectory, quantity) {
+    // Creates the parent div to hold all the product information
     let cartItemDiv = document.createElement('div');
     cartItemDiv.setAttribute("class", "cart-item");
 
+    // Creates a div for the first of two columns in the list item graphic
     let cartItemCol1 = document.createElement('div');
     cartItemCol1.setAttribute("class", "cart-item-col-1");
     let productImage = document.createElement("img");
     productImage.setAttribute("src", imageDirectory);
     
+    // Appends the image element as a child to the first column in the list graphic
     cartItemCol1.append(productImage);
 
-
+    // Creates a div for the second of two columns in the list item graphic
     let cartItemCol2 = document.createElement('div');
     cartItemCol2.setAttribute("class", "cart-item-col-2");
 
+    // Creates a div for the first of two rows in the second column in the list item graphic
     let cartItemRow1 = document.createElement('div');
     cartItemRow1.setAttribute("class", "cart-item-row");
     let productName = document.createElement('h5');
     productName.textContent = name;
+    // Appends the header element as a child to the first row in the second column of the list graphic
     cartItemRow1.appendChild(productName);
 
+    // Creates a div for the second of two rows in the second column in the list item graphic
     let cartItemRow2 = document.createElement('div');
     cartItemRow2.setAttribute("class", "cart-item-row cart-item-row-2");
 
+    // Creates a div for the first of two columns in the second row in the second column in the list item graphic
     let cartItemRowCol1 = document.createElement('div');
     cartItemRowCol1.setAttribute("class", "cart-item-row-col");
     let productPrice = document.createElement('p');
     productPrice.textContent = price;
+    // Appends the paragraph element as a child to the first column in the second row in the second column in the list item graphic
     cartItemRowCol1.appendChild(productPrice);
 
+    // Creates a div for the second of two columns in the second row in the second column in the list item graphic
     let cartItemRowCol2 = document.createElement('div');
     cartItemRowCol2.setAttribute("class", "cart-item-row-col");
 
+    // Creates a div to hold the quantity and its increment/decrement buttons
     let quantityContainer = document.createElement('div');
     quantityContainer.setAttribute("class", "quantity");
+    // Creates a table to hold a decrement button, an increment button and the quantity value
     let quantityTable = document.createElement('table');
     let quantityTableBody = document.createElement('tbody');
     let quantityTableRow = document.createElement('tr');
 
+    // Creates the decrement button as a table data element
     let quantityTableDataCol1 = document.createElement('td');
     quantityTableDataCol1.setAttribute("class", "quantity-col quantity-col-1");
     quantityTableDataCol1.style.borderRight = "none";
     let minusIcon = document.createElement('img');
     minusIcon.setAttribute("src", "assets/icons/minus.svg");
-
+    // Appends decrement icon as a child to the first table data element
     quantityTableDataCol1.appendChild(minusIcon);
 
+    // Creates the quantity value as a table data element
     let quantityTableDataCol2 = document.createElement('td');
     quantityTableDataCol2.setAttribute("class", "quantity-col quantity-col-2");
     quantityTableDataCol2.setAttribute("id", "quantity-10");
     quantityTableDataCol2.textContent = quantity;
     
+    // Creates the increment button as a table data element
     let quantityTableDataCol3 = document.createElement('td');
     quantityTableDataCol3.setAttribute("class", "quantity-col quantity-col-3");
     quantityTableDataCol3.style.borderLeft = "none";
     let plusIcon = document.createElement('img');
     plusIcon.setAttribute("src", "assets/icons/plus.svg");
-
+    // Appends increment icon as a child to the third table data element
     quantityTableDataCol3.appendChild(plusIcon);
 
-
+    // Appends all table cells to the table row
     quantityTableRow.appendChild(quantityTableDataCol1);
     quantityTableRow.appendChild(quantityTableDataCol2);
     quantityTableRow.appendChild(quantityTableDataCol3);
 
+    // Appends the table row to the table body
     quantityTableBody.append(quantityTableRow);
     
+    // Appends the table body to the table
     quantityTable.append(quantityTableBody);
 
+    // Appends the table as a child to the quantity div element
     quantityContainer.appendChild(quantityTable);
 
+    // Appends the quantity div element to the second column in the second row in the second column the list item graphic
     cartItemRowCol2.appendChild(quantityContainer);
 
+    // Appends the columns of the second row to the second row div element
     cartItemRow2.appendChild(cartItemRowCol1);
     cartItemRow2.appendChild(cartItemRowCol2);
 
+    // Appends the rows of the second column to the second column div element
     cartItemCol2.appendChild(cartItemRow1);
     cartItemCol2.appendChild(cartItemRow2);
 
+    // Appends the columns of the list item graphic to the list item div element
     cartItemDiv.appendChild(cartItemCol1);
     cartItemDiv.appendChild(cartItemCol2);
 
+    // Appends the fully constructed list item to the list of cart contents
     document.querySelector("#cart-contents").appendChild(cartItemDiv);
 }
 
 function clearCart() {
+    // Iteratively deletes all cart items in the HTML document
     document.querySelectorAll(".cart-item").forEach( (x) => {
         x.remove();
     })
