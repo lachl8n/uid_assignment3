@@ -218,6 +218,10 @@ function showCart() {
     // Displays the total cost to the user in the cart
     document.getElementById("subtotal").textContent = "$" + totalCost.toFixed(2);
 
+    for (i=0; i<8; i++) {
+        console.log(cart[i]);
+    }
+
     // Blurs the background of the webpage and indicates the use of the blur
     blurBackground();
     blurOption = 3;
@@ -246,6 +250,7 @@ function addToCart() {
 
     // Adds the product to a list representing the cart
     cart[productIndex]++;
+
 
     // Increments the quantity of total products selected
     totalCartQuantity++;
@@ -427,4 +432,193 @@ function updateCart() {
     }
 
     document.getElementById("cart-count").textContent = totalCartQuantity;
+}
+
+function populateCart() {
+    //console.log(localStorage.getItem("totalQuantity"));
+    totalCartQuantity = localStorage.getItem("totalQuantity");
+    cart[0] = localStorage.getItem("Bananas");
+    cart[1] = localStorage.getItem("ConversationHearts");
+    cart[2] = localStorage.getItem("BlueRaspWheels");
+    cart[3] = localStorage.getItem("CandyBullets");
+    cart[4] = localStorage.getItem("CherryWheels");
+    cart[5] = localStorage.getItem("AlmondBrittle");
+    cart[6] = localStorage.getItem("DollyMix");
+    cart[7] = localStorage.getItem("Fizzoes");
+    
+    if (totalCartQuantity != 0) {
+        for (i=0; i<8; i++) {
+            if (cart[i] != 0) {
+                addProductToCheckoutCart(i, cart[i]);
+            }
+        }
+    }
+    
+}
+
+function addProductToCheckoutCart(productIndex, quantity) {
+    let productName;
+    let productPrice;
+    let productQuantity = quantity;
+    let productImageDirectory;
+
+    // Using the index in the list, determining the type of product it represents and provides the relevant information
+    if (productIndex == 0) {
+        productName = "Bananas";
+        productPrice = "6.00";
+        productImageDirectory = "assets/images/products/bananas.jpeg"
+    } else if (productIndex == 1) {
+        productName = "Conversation Hearts";
+        productPrice = "6.50";
+        productImageDirectory = "assets/images/products/conversation-hearts.png"
+    } else if (productIndex == 2) {
+        productName = "Blue Raspberry Wheels";
+        productPrice = "6.00";
+        productImageDirectory = "assets/images/products/blue-raspberry-wheels.jpg"
+    } else if (productIndex == 3) {
+        productName = "Candy Bullets";
+        productPrice = "6.00";
+        productImageDirectory = "assets/images/products/candy-bullets.jpeg"
+    } else if (productIndex == 4) {
+        productName = "Cherry Wheels";
+        productPrice = "6.50";
+        productImageDirectory = "assets/images/products/cherry-wheels.jpeg"
+    } else if (productIndex == 5) {
+        productName = "Almond Brittle";
+        productPrice = "7.00";
+        productImageDirectory = "assets/images/products/almond-brittle.jpeg"
+    } else if (productIndex == 6) {
+        productName = "Dolly Mix";
+        productPrice = "6.00";
+        productImageDirectory = "assets/images/products/dolly-mix.jpeg"
+    } else if (productIndex == 7) {
+        productName = "Fizzoes";
+        productPrice = "6.50";
+        productImageDirectory = "assets/images/products/fizzoes.jpeg"
+    }
+
+    // Adds cost of product to total cost
+    totalCost += parseFloat(productPrice) * parseFloat(productQuantity);
+
+    // Creates a new HTML element to represent a product in the list in the cart
+    createProductInCheckoutCart(productName, ("$" + productPrice), productImageDirectory, productQuantity);
+}
+
+function createProductInCheckoutCart(name, price, imageDirectory, quantity) {
+    // Creates the parent div to hold all the product information
+    let cartItemDiv = document.createElement('div');
+    cartItemDiv.setAttribute("class", "cart-item");
+
+    // Creates a div for the first of two columns in the list item graphic
+    let cartItemCol1 = document.createElement('div');
+    cartItemCol1.setAttribute("class", "cart-item-col-1");
+    let productImage = document.createElement("img");
+    productImage.setAttribute("src", imageDirectory);
+    
+    // Appends the image element as a child to the first column in the list graphic
+    cartItemCol1.append(productImage);
+
+    // Creates a div for the second of two columns in the list item graphic
+    let cartItemCol2 = document.createElement('div');
+    cartItemCol2.setAttribute("class", "cart-item-col-2");
+
+    // Creates a div for the first of two rows in the second column in the list item graphic
+    let cartItemRow1 = document.createElement('div');
+    cartItemRow1.setAttribute("class", "cart-item-row");
+    let productName = document.createElement('h5');
+    productName.textContent = name;
+    // Appends the header element as a child to the first row in the second column of the list graphic
+    cartItemRow1.appendChild(productName);
+
+    // Creates a div for the second of two rows in the second column in the list item graphic
+    let cartItemRow2 = document.createElement('div');
+    cartItemRow2.setAttribute("class", "cart-item-row cart-item-row-2");
+
+    // Creates a div for the first of two columns in the second row in the second column in the list item graphic
+    let cartItemRowCol1 = document.createElement('div');
+    cartItemRowCol1.setAttribute("class", "cart-item-row-col");
+    let productPrice = document.createElement('p');
+    productPrice.textContent = price;
+    // Appends the paragraph element as a child to the first column in the second row in the second column in the list item graphic
+    cartItemRowCol1.appendChild(productPrice);
+
+    // Creates a div for the second of two columns in the second row in the second column in the list item graphic
+    let cartItemRowCol2 = document.createElement('div');
+    cartItemRowCol2.setAttribute("class", "cart-item-row-col");
+
+    // Creates a div to hold the quantity and its increment/decrement buttons
+    let quantityContainer = document.createElement('div');
+    quantityContainer.setAttribute("class", "quantity");
+    // Creates a table to hold a decrement button, an increment button and the quantity value
+    let quantityTable = document.createElement('table');
+    let quantityTableBody = document.createElement('tbody');
+    let quantityTableRow = document.createElement('tr');
+
+    // Creates the decrement button as a table data element
+    let quantityTableDataCol1 = document.createElement('td');
+    quantityTableDataCol1.setAttribute("class", "quantity-col quantity-col-1");
+    quantityTableDataCol1.style.borderRight = "none";
+    let minusIcon = document.createElement('img');
+    minusIcon.setAttribute("src", "assets/icons/minus.svg");
+    // Appends decrement icon as a child to the first table data element
+    quantityTableDataCol1.appendChild(minusIcon);
+
+    // Creates the quantity value as a table data element
+    let quantityTableDataCol2 = document.createElement('td');
+    quantityTableDataCol2.setAttribute("class", "quantity-col quantity-col-2");
+    quantityTableDataCol2.setAttribute("id", "quantity-10");
+    quantityTableDataCol2.textContent = quantity;
+    
+    // Creates the increment button as a table data element
+    let quantityTableDataCol3 = document.createElement('td');
+    quantityTableDataCol3.setAttribute("class", "quantity-col quantity-col-3");
+    quantityTableDataCol3.style.borderLeft = "none";
+    let plusIcon = document.createElement('img');
+    plusIcon.setAttribute("src", "assets/icons/plus.svg");
+    // Appends increment icon as a child to the third table data element
+    quantityTableDataCol3.appendChild(plusIcon);
+
+    // Appends all table cells to the table row
+    quantityTableRow.appendChild(quantityTableDataCol1);
+    quantityTableRow.appendChild(quantityTableDataCol2);
+    quantityTableRow.appendChild(quantityTableDataCol3);
+
+    // Appends the table row to the table body
+    quantityTableBody.append(quantityTableRow);
+    
+    // Appends the table body to the table
+    quantityTable.append(quantityTableBody);
+
+    // Appends the table as a child to the quantity div element
+    quantityContainer.appendChild(quantityTable);
+
+    // Appends the quantity div element to the second column in the second row in the second column the list item graphic
+    cartItemRowCol2.appendChild(quantityContainer);
+
+    // Appends the columns of the second row to the second row div element
+    cartItemRow2.appendChild(cartItemRowCol1);
+    cartItemRow2.appendChild(cartItemRowCol2);
+
+    // Appends the rows of the second column to the second column div element
+    cartItemCol2.appendChild(cartItemRow1);
+    cartItemCol2.appendChild(cartItemRow2);
+
+    // Appends the columns of the list item graphic to the list item div element
+    cartItemDiv.appendChild(cartItemCol1);
+    cartItemDiv.appendChild(cartItemCol2);
+
+    document.querySelector("#checkout-cart").appendChild(cartItemDiv);
+}
+
+function saveDataToLocalStorage() {
+    localStorage.setItem("totalQuantity", totalCartQuantity);
+    localStorage.setItem("Bananas", cart[0]);
+    localStorage.setItem("ConversationHearts", cart[1]);
+    localStorage.setItem("BlueRaspWheels", cart[2]);
+    localStorage.setItem("CandyBullets", cart[3]);
+    localStorage.setItem("CherryWheels", cart[4]);
+    localStorage.setItem("AlmondBrittle", cart[5]);
+    localStorage.setItem("DollyMix", cart[6]);
+    localStorage.setItem("Fizzoes", cart[7]);
+
 }

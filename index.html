@@ -15,7 +15,7 @@
 
     <title>The Beechworth Sweets Co.</title>
 </head>
-<body id="body">
+<body id="body" onload="localStorage.clear()">
 
     <div id="cart-container">
         <h4>Cart</h4>
@@ -80,7 +80,7 @@
                             <li><a href="about.html"><div class="nav-box nav-tan">About Us</div></a></li>
                             <li class="products-nav-container">
                                 <a href="categories.html"><div class="nav-box nav-tan" id="products-btn" onmouseover="showProductDropdown('green')">Products</div></a>
-                                <div id="product-drop-down" class="nav-tan" onmouseleave="hideProductDropdown('green')">
+                                <div id="product-drop-down" class="nav-tan" onmouseleave="hideProductDropdown()">
                                     <table>
                                         <tr><td onclick="location.href='products.html'">All Your Favourites</td></tr>
                                         <tr><td onclick="location.href=''">Gummies and Jellies</td></tr>

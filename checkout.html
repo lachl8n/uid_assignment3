@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <mta http-equiv="X-UA-Compatible" contents="IE=edge"></mta>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Adamina' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Fredoka' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Fredoka One' rel='stylesheet'>
+    <script src="script.js"></script>
+    <title>The Beechworth Sweets Co. - Products</title>
+</head>
+<body id="body" onload="populateCart()">
+
+    <div id="cart-container">
+        <h4>Cart</h4>
+
+        <div id="cart-contents">
+            <div class="cart-item" id="empty-cart">
+                <p>Your cart is currently empty!</p>
+            </div>
+        </div>
+
+        <p id="cart-subtotal"><span id="subtotal-title">Subtotal</span><span id="subtotal">$$$</span></p>
+        <a class="cart-btn" href="">Checkout<img src="assets/icons/circle-arrow-right.svg"/></a>
+    </div>
+
+    <div id="search-section">
+        <div id="search-bar">
+            <img id="search-icon" src="assets/icons/magnifying-glass.svg"/>
+            <input id="search-input" type="text"/>
+            <img id="search-close" src="assets/icons/circle-xmark.svg" onclick="unblurBackground()"/>
+        </div>
+    </div>
+
+    <div id="blur-overlay" onclick="unblurBackground()"></div>
+
+    <div class="container back-tan" id="page-container">
+        <div id="page-content">
+            <header>
+                <div class="nav-item" id="nav-left">
+                    <img src="assets/images/beechworth_logo.png">
+                </div>
+                <div class="nav-item" id="nav-middle">
+                    <ul>
+                        <li><a href="index.html"><div class="nav-box nav-green">Home</div></a></li>
+                        <li><a href="about.html"><div class="nav-box nav-green">About Us</div></a></li>
+                        <li class="products-nav-container">
+                            <a href="categories.html"><div class="nav-box nav-green" id="products-btn" onmouseover="showProductDropdown('green')">Products</div></a>
+                            <div id="product-drop-down" class="nav-green" onmouseleave="hideProductDropdown('green')">
+                                <table>
+                                    <tr><td onclick="location.href='products.html'">All Your Favourites</td></tr>
+                                    <tr><td onclick="location.href=''">Gummies and Jellies</td></tr>
+                                    <tr><td onclick="location.href=''">Chocolate</td></tr>
+                                    <tr><td onclick="location.href=''">Fudge</td></tr>
+                                    <tr><td onclick="location.href=''">Nougat</td></tr>
+                                    <tr><td onclick="location.href=''">Boiled Sweets</td></tr>
+                                    <tr><td onclick="location.href=''">Lollipops</td></tr>
+                                    <tr><td onclick="location.href=''">Truffles</td></tr>
+                                    <tr><td onclick="location.href=''">Lolly Jars</td></tr>
+                                    <tr><td onclick="location.href=''">Novelty and Giftware</td></tr>
+                                </table>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="nav-item" id="nav-right">
+                    <img src="assets/icons/magnifying-glass-green.png" onclick="showSearch()"/>
+                    <div id="cart-count">0</div>
+                    <img src="assets/icons/bag-shopping-green.png" onclick="showCart()"/>
+                </div>
+            </header>
+
+            <div id="checkout-cart">
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>
