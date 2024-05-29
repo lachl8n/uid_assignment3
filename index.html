@@ -60,12 +60,12 @@
                 <p id="product-ingredients" class="product-information"></p>
                 <p id="product-allergens" class="product-information"></p>
                 <br>
-                <a class="add-to-cart-btn" href=""><img src="assets/icons/plus-offwhite.png"/>Add To Cart</a>
+                <a class="add-to-cart-btn" onclick="addToCart()"><img src="assets/icons/plus-offwhite.png"/>Add To Cart</a>
             </div>
         </div>
     </div>
 
-    <div id="blur-overlay" onclick="hideProduct()"></div>
+    <div id="blur-overlay" onclick="unblurBackground()"></div>
 
     <div id="page-container">
         <div id="page-content">
@@ -79,11 +79,11 @@
                             <li><a href="index.html"><div class="nav-box nav-tan">Home</div></a></li>
                             <li><a href="about.html"><div class="nav-box nav-tan">About Us</div></a></li>
                             <li class="products-nav-container">
-                                <a href="categories.html"><div class="nav-box nav-tan" id="products-btn" onmouseover="showProductDropdown()">Products</div></a>
-                                <div id="product-drop-down" class="nav-tan" onmouseleave="hideProductDropdown()">
+                                <a href="categories.html"><div class="nav-box nav-tan" id="products-btn" onmouseover="showProductDropdown('green')">Products</div></a>
+                                <div id="product-drop-down" class="nav-tan" onmouseleave="hideProductDropdown('green')">
                                     <table>
                                         <tr><td onclick="location.href='products.html'">All Your Favourites</td></tr>
-                                        <tr><td onclick="location.href='products.html'">Gummies and Jellies</td></tr>
+                                        <tr><td onclick="location.href=''">Gummies and Jellies</td></tr>
                                         <tr><td onclick="location.href=''">Chocolate</td></tr>
                                         <tr><td onclick="location.href=''">Fudge</td></tr>
                                         <tr><td onclick="location.href=''">Nougat</td></tr>
@@ -99,7 +99,8 @@
                     </div>
                     <div class="nav-item" id="nav-right">
                         <img src="assets/icons/magnifying-glass-tan.png" onclick="showSearch()"/>
-                        <img src="assets/icons/bag-shopping-tan.png"/>
+                        <div id="cart-count">0</div>
+                        <img src="assets/icons/bag-shopping-tan.png" onclick="showCart()"/>
                     </div>
                 </header>
             </div>
