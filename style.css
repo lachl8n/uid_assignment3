@@ -545,7 +545,7 @@ h2 {
 }
 
 .product-content > p {
-    font-size: 1rem;
+    font-size: 0.8rem;
 }
 
 .add-to-cart-btn {
@@ -668,7 +668,7 @@ hr {
 #cart-contents {
     width: 90%;
     margin: auto;
-    max-height: 27rem;
+    max-height: 18rem;
     overflow-y: scroll;
     overflow-x: hidden;
 }
@@ -803,4 +803,20 @@ hr {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#cart-count {
+    position: absolute;
+    top: 2rem;
+    right: 3.8rem;
+    background-color: red;
+    color: white;
+    font-family: 'Fredoka';
+    font-size: 0.8rem;
+    height: 1.2rem;
+    width: 1.2rem;
+    text-align: center;
+    border-radius: 10rem;
+    line-height: 1.2rem;
+    display: none;
 }

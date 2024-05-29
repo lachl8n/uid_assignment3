@@ -6,6 +6,8 @@ let totalCost = 0.00;
 
 let currentProductID;
 
+let cartEmpty = true;
+
 function showSearch() {
     // Display the search bar
     document.getElementById("search-section").style.visibility = "visible";
@@ -145,7 +147,7 @@ function showProduct(id) {
     
 
     // Prevents the user from scrolling while the pop-up is visible
-    document.getElementById("body").style.overflow = "hidden";
+    document.getElementById("body").style.overflowY = "hidden";
 
     // Displays the product-pop up to the user
     document.getElementById("product").style.visibility = "visible";
@@ -185,7 +187,7 @@ function unblurBackground() {
     }
 
     document.getElementById("blur-overlay").style.visibility = "hidden";
-    document.getElementById("body").style.overflow = "scroll";
+    document.getElementById("body").style.overflowY = "scroll";
 }
 
 function incrementQuantity() {
@@ -197,7 +199,7 @@ function showCart() {
     // Display the cart pop-up to the user
     document.getElementById("cart-container").style.visibility = "visible";
     document.getElementById("cart-container").style.opacity = "100%";
-    document.getElementById("body").style.overflow = "hidden";
+    document.getElementById("body").style.overflowY = "hidden";
     
     // Iteratively adds the products selected by the user to the list in the cart
     if (totalCartQuantity != 0) {
@@ -206,8 +208,11 @@ function showCart() {
                 addProductToList(i, cart[i]);
             }
         }
-    } else {
-        document.getElementById("empty-cart"),display = "flex";
+
+        if (cartEmpty == true) {
+            document.getElementById("empty-cart").style.display = "none";
+            cartEmpty = false;
+        }
     }
 
     // Displays the total cost to the user in the cart
@@ -247,6 +252,8 @@ function addToCart() {
 
     // Unblurs the background
     unblurBackground();
+
+    updateCart();
 }
 
 function addProductToList(productIndex, quantity) {
@@ -409,4 +416,15 @@ function clearCart() {
     document.querySelectorAll(".cart-item").forEach( (x) => {
         x.remove();
     })
+}
+
+function updateCart() {
+    console.log(totalCartQuantity);
+    if (totalCartQuantity > 0) {
+        document.getElementById("cart-count").style.display = "block";
+    } else {
+        document.getElementById("cart-count").style.display = "none";
+    }
+
+    document.getElementById("cart-count").textContent = totalCartQuantity;
 }
