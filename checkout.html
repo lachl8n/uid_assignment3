@@ -23,7 +23,7 @@
         </div>
 
         <p id="cart-subtotal"><span id="subtotal-title">Subtotal</span><span id="subtotal">$$$</span></p>
-        <a class="cart-btn" href="">Checkout<img src="assets/icons/circle-arrow-right.svg"/></a>
+        <a id="cart-btn" class="cart-btn" href="">Checkout<img src="assets/icons/circle-arrow-right.svg"/></a>
     </div>
 
     <div id="search-section">
@@ -71,9 +71,62 @@
                     <img src="assets/icons/bag-shopping-green.png" onclick="showCart()"/>
                 </div>
             </header>
-
-            <div id="checkout-cart">
+            <div class="checkout-container">
+                <div class="checkout-col-1">
+                    <div class="checkout-col-1-container">
+                        <h4>Cart Summary</h4>
+                        <div id="checkout-cart">
+                        </div>
+                    </div>
+                </div>
                 
+                <div class="checkout-col-2">
+                    <div class="checkout-col-2-container">
+                        <div class="checkout-field">
+                            <h6>Name</h6>
+                            <input type="text"/>
+                        </div>
+
+                        <div class="checkout-field">
+                            <h6>Address</h6>
+                            <input type="text"/>
+                        </div>
+
+                        <div class="checkout-field">
+                            <h6>Phone</h6>
+                            <input type="text"/>
+                        </div>
+
+                        <div class="checkout-field">
+                            <h6>Email</h6>
+                            <input type="text"/>
+                        </div>
+                        
+                        <div class="address-information">
+                            <div class="checkout-field">
+                                <h6>State</h6>
+                                <input type="text"/>
+                            </div>
+
+                            <div class="checkout-field">
+                                <h6>Postcode</h6>
+                                <input type="text"/>
+                            </div>
+                        </div>
+                        
+                        <div class="checkout-field">
+                            <h6>Delivery</h6>
+                            <select class="checkout-delivery">
+                                <option style="display: none;">Select Delivery Option</option>
+                                <option>Delivery</option>
+                                <option>Pick Up</option>
+                            </select>
+                        </div>
+                        <div class="checkout-btn" onclick="location.href='index.html'">
+                            <p>Checkout</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
