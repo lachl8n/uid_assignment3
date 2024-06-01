@@ -36,6 +36,7 @@ a {
 
 #nav-left > img {
     height: 100px;
+    cursor: pointer;
 }
 
 #nav-middle {
@@ -95,6 +96,7 @@ td {
     padding-left: 0.2rem;
     padding-top: 0.2rem;
     padding-bottom: 0.2rem;
+    cursor: pointer;
 }
 
 table {
@@ -110,6 +112,7 @@ table {
 #nav-right > img {
     height: 40px;
     margin: 30px 20px;
+    cursor: pointer;
     /* color: red; */
 }
 
@@ -148,8 +151,6 @@ table {
 }
 
 .nav-tan td:hover {
-    /* background-color: var(--pastel-green);
-    color: white; */
     background-color: var(--tan);
     color: var(--dark-green);
 }
@@ -186,6 +187,7 @@ table {
     max-width: 14rem;
     margin: 0.5rem 0;
     padding: 0.8rem 0;
+    cursor: pointer;
 }
 
 .btn:hover {
@@ -327,6 +329,7 @@ h2 {
     position: relative;
     transition: transform 1s;
     z-index: 1;
+    cursor: pointer;
 }
 
 .homepage-product {
@@ -340,6 +343,7 @@ h2 {
     position: relative;
     transition: transform 1s;
     z-index: 1;
+    cursor: pointer;
 }
 
 .homepage-category > a > img {
@@ -442,29 +446,15 @@ h2 {
     text-align: center;
 }
 
-.flexcontainter{
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    padding:20px;
-    position: relative;
-    z-index: 2;
-
-}
-.textbox-1 {
+.about-container {
     color:rgb(124, 144, 108);
     font-family: 'Fredoka';
-   /*padding: 20px;
-    max-width: 600px;
-    width:100%;
-    text-align: center;
-    */
     font-size: 20px;
-    max-width: 863px;
-    max-height: 415px;
-    margin: 0 auto; 
+    margin: 0 auto;
+    position: relative;
+    width: 40%;
 }
+
 /*
 .textbox-1 p {
     font-size: 1rem;
@@ -484,12 +474,14 @@ h2 {
 }
 */
 .woman-making-sweets {
-    height: 300px;
+    /* height: 300px;
     display: block;
     margin: 50px auto;
     text-align: center;
     
-    /*overflow: hidden; */
+    overflow: hidden; */
+    text-align: center;
+    margin-top: 5rem;
 }
 
 .textbox-1 > h2 {
@@ -617,6 +609,7 @@ hr {
     padding: 7px 22.5px;
     border-radius: 10px;
     transition: all 1s;
+    cursor: pointer;
 }
 
 #selected-category, .category-nav-bar > ul > li:hover {

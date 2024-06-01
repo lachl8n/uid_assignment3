@@ -23,26 +23,26 @@
     <div class="container back-tan" id="page-container">
         <header>
             <div class="nav-item" id="nav-left">
-                <img src="assets/images/beechworth_logo.png">
+                <img src="assets/images/beechworth_logo.png" onclick="location.href='index.html'">
             </div>
             <div class="nav-item" id="nav-middle">
                 <ul>
                     <li><a href="index.html"><div class="nav-box nav-green">Home</div></a></li>
                     <li><a href="about.html"><div class="nav-box nav-green">About Us</div></a></li>
-                    <li>
-                        <a href="categories.html"><div class="nav-box nav-green" id="products-btn" onmouseover="showProductDropdown()">Products</div></a>
+                    <li class="products-nav-container">
+                        <a href="categories.html"><div class="nav-box nav-green" id="products-btn" onmouseover="showProductDropdown('green')">Products</div></a>
                         <div id="product-drop-down" class="nav-green" onmouseleave="hideProductDropdown('green')">
                             <table>
                                 <tr><td onclick="location.href='products.html'">All Your Favourites</td></tr>
-                                <tr><td onclick="location.href=''">Gummies and Jellies</td></tr>
-                                <tr><td onclick="location.href=''">Chocolate</td></tr>
-                                <tr><td onclick="location.href=''">Fudge</td></tr>
-                                <tr><td onclick="location.href=''">Nougat</td></tr>
-                                <tr><td onclick="location.href=''">Boiled Sweets</td></tr>
-                                <tr><td onclick="location.href=''">Lollipops</td></tr>
-                                <tr><td onclick="location.href=''">Truffles</td></tr>
-                                <tr><td onclick="location.href=''">Lolly Jars</td></tr>
-                                <tr><td onclick="location.href=''">Novelty and Giftware</td></tr>
+                                <tr><td onclick="location.href='products.html'">Gummies and Jellies</td></tr>
+                                <tr><td onclick="location.href='products.html'">Chocolate</td></tr>
+                                <tr><td onclick="location.href='products.html'">Fudge</td></tr>
+                                <tr><td onclick="location.href='products.html'">Nougat</td></tr>
+                                <tr><td onclick="location.href='products.html'">Boiled Sweets</td></tr>
+                                <tr><td onclick="location.href='products.html'">Lollipops</td></tr>
+                                <tr><td onclick="location.href='products.html'">Truffles</td></tr>
+                                <tr><td onclick="location.href='products.html'">Lolly Jars</td></tr>
+                                <tr><td onclick="location.href='products.html'">Novelty and Giftware</td></tr>
                             </table>
                         </div>
                     </li>
@@ -50,7 +50,8 @@
             </div>
             <div class="nav-item" id="nav-right">
                 <img src="assets/icons/magnifying-glass-green.png" onclick="showSearch()"/>
-                <img src="assets/icons/bag-shopping-green.png"/>
+                <div id="cart-count">0</div>
+                <img src="assets/icons/bag-shopping-green.png" onclick="showCart()"/>
             </div>
         </header>
 
