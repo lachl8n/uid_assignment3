@@ -447,7 +447,7 @@ h2 {
 }
 
 .about-container {
-    color:rgb(124, 144, 108);
+    color: var(--pastel-green);
     font-family: 'Fredoka';
     font-size: 20px;
     margin: 0 auto;
@@ -473,7 +473,7 @@ h2 {
     }
 }
 */
-.woman-making-sweets {
+.about-images {
     /* height: 300px;
     display: block;
     margin: 50px auto;
