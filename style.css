@@ -987,14 +987,6 @@ hr {
     margin-top: 60%;
 }
 
-/* Media query for larger screens if specific adjustments are needed */
-@media only screen and (min-width: 600px) {
-    .candy-container {
-        padding-bottom: 50%;
-        float: left;
-        width: 100%;
-    }
-}
 
 
 
@@ -1244,6 +1236,9 @@ body{
         flex-direction: column;
         align-items: center;
     }
+    #red-candy-1, #red-candy-2, #red-candy-3, #red-candy-4,#red-candy-5,#red-candy-6 {
+        display: none;
+    }
 
     .nav-item{
         height: auto;
@@ -1271,11 +1266,13 @@ body{
     .homepage-buttons{
         display: flex;
         flex-direction: column;
+        align-items: center;
     }
 
     .product-slider{
         flex-direction: column;
         margin: 20px;
+        align-items: center;
 
     }
 
@@ -1305,15 +1302,20 @@ body{
     #search-bar {
         width: 70%;
     }
-
-    .container> .box-1{
-        margin: 20px;
-        text-align: center;
+    
+     .container .box-1 img {
+        max-width: 100%; /* Ensure image doesn't exceed container width */
+        width: 80%; 
+        height: auto; 
     }
-
-    .homepage-buttons{
-        display:flex;
+    
+   
+    .homepage-buttons {
+        display: flex;
         flex-direction: column;
+        align-items: center; 
+        justify-content: center; 
+        margin-top: 20px; 
     }
 
     .product-slider{
@@ -1348,7 +1350,10 @@ header{
     } */
 
     .product-slider{
-        margin: 20px 10rem;
+        /*margin: 20px 10rem; */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
     }
 
     .homepage-product{
@@ -1360,8 +1365,9 @@ header{
 @media screen and (max-width: 390px){
 
     .product-slider{
-        flex-direction: column;
-        margin: 20px 2rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
     }
 
     .homepage-product{
