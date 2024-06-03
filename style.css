@@ -839,7 +839,7 @@ hr {
     
     #nav-middle {
         text-align: center;
-        width: 50%;
+        width: 100%;
         position: relative;
         margin-left: 135px;
     }
@@ -851,7 +851,7 @@ hr {
     }
 
     .about-images{
-        max-width: 30%;
+        max-width: 100%;
     }
     
     
@@ -1038,12 +1038,12 @@ body{
     }
 
     .about-images img {
-        width: 15rem; /* Adjust the percentage as needed */
+        width: 100%; /* Adjust the percentage as needed */
         height: auto;
-        display: block;
+        display:flex;
         margin: 0 auto;
     }
-   
+    
 }
 
 @media only screen and (min-width: 912px) {
@@ -1331,50 +1331,45 @@ body{
 }
 
 /* for products page */
-body{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-
-}
-
-header{
-    flex-wrap: wrap;
-    padding: 1rem;
-}
-
-@media screen and (max-width: 912px){
-    /* #nav-middle{
-        width: 60%;
-        margin-left: 70px;
-    } */
-
-    .product-slider{
-        /*margin: 20px 10rem; */
+@media screen and (max-width: 912px) {
+    .phone-header {
         display: flex;
-        flex-wrap: wrap;
         justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+    }
+    .laptop-header {
+        margin:0;
     }
 
+    #nav-middle {
+        width: 60%;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .product-slider {
+        margin: 20px 0;
+    }
+
+    .homepage-product {
+        width: 48%;
+        margin-bottom: 20px;
+    }
+}
+@media screen and (max-width: 390px){
+/*
+    .product-slider{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content:center;
+    }
+*/
     .homepage-product{
         width: 40%;
         margin-bottom: 20px;
     }
-}
-
-@media screen and (max-width: 390px){
-
-    .product-slider{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-
-    .homepage-product{
-        width: 80%;
-        margin-bottom: 20px;
-    }
-
+    
     .product-content{
         width: 14rem;
         padding: 2rem 1.5rem;
