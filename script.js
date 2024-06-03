@@ -200,7 +200,7 @@ function showCart() {
     document.getElementById("cart-container").style.visibility = "visible";
     document.getElementById("cart-container").style.opacity = "100%";
     document.getElementById("body").style.overflowY = "hidden";
-    
+    console.log(totalCartQuantity);
     // Iteratively adds the products selected by the user to the list in the cart
     if (totalCartQuantity != 0) {
         for (i=0; i<8; i++) {
@@ -209,8 +209,11 @@ function showCart() {
             }
         }
 
+        console.log(cartEmpty);
+
         if (cartEmpty == true) {
             document.getElementById("empty-cart").style.display = "none";
+            document.getElementById("cart-btn").style.pointerEvents = "all";
             cartEmpty = false;
         }
     }
@@ -546,54 +549,18 @@ function createProductInCheckoutCart(name, price, imageDirectory, quantity) {
     let cartItemRowCol2 = document.createElement('div');
     cartItemRowCol2.setAttribute("class", "cart-item-row-col");
 
-    // Creates a div to hold the quantity and its increment/decrement buttons
-    let quantityContainer = document.createElement('div');
-    quantityContainer.setAttribute("class", "quantity");
-    // Creates a table to hold a decrement button, an increment button and the quantity value
-    let quantityTable = document.createElement('table');
-    let quantityTableBody = document.createElement('tbody');
-    let quantityTableRow = document.createElement('tr');
+    // Creates a div for the product quantity
+    let quantityDiv = document.createElement('div');
+    quantityDiv.setAttribute("class", "immutable-quantity");
+    // Creates a div for the paragraph element to store the quantity
+    let quantityParagraph = document.createElement('p');
+    quantityParagraph.textContent = "Quantity: " + quantity;
 
-    // Creates the decrement button as a table data element
-    let quantityTableDataCol1 = document.createElement('td');
-    quantityTableDataCol1.setAttribute("class", "quantity-col quantity-col-1");
-    quantityTableDataCol1.style.borderRight = "none";
-    let minusIcon = document.createElement('img');
-    minusIcon.setAttribute("src", "assets/icons/minus.svg");
-    // Appends decrement icon as a child to the first table data element
-    quantityTableDataCol1.appendChild(minusIcon);
-
-    // Creates the quantity value as a table data element
-    let quantityTableDataCol2 = document.createElement('td');
-    quantityTableDataCol2.setAttribute("class", "quantity-col quantity-col-2");
-    quantityTableDataCol2.setAttribute("id", "quantity-10");
-    quantityTableDataCol2.textContent = quantity;
-    
-    // Creates the increment button as a table data element
-    let quantityTableDataCol3 = document.createElement('td');
-    quantityTableDataCol3.setAttribute("class", "quantity-col quantity-col-3");
-    quantityTableDataCol3.style.borderLeft = "none";
-    let plusIcon = document.createElement('img');
-    plusIcon.setAttribute("src", "assets/icons/plus.svg");
-    // Appends increment icon as a child to the third table data element
-    quantityTableDataCol3.appendChild(plusIcon);
-
-    // Appends all table cells to the table row
-    quantityTableRow.appendChild(quantityTableDataCol1);
-    quantityTableRow.appendChild(quantityTableDataCol2);
-    quantityTableRow.appendChild(quantityTableDataCol3);
-
-    // Appends the table row to the table body
-    quantityTableBody.append(quantityTableRow);
-    
-    // Appends the table body to the table
-    quantityTable.append(quantityTableBody);
-
-    // Appends the table as a child to the quantity div element
-    quantityContainer.appendChild(quantityTable);
+    // Appends quantity paragraph element to container
+    quantityDiv.appendChild(quantityParagraph);
 
     // Appends the quantity div element to the second column in the second row in the second column the list item graphic
-    cartItemRowCol2.appendChild(quantityContainer);
+    cartItemRowCol2.appendChild(quantityDiv);
 
     // Appends the columns of the second row to the second row div element
     cartItemRow2.appendChild(cartItemRowCol1);

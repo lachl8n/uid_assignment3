@@ -14,61 +14,128 @@
 </head>
 
 <body style="background-color:rgb(255, 249, 226);">
-    <header>
-        <div class="nav-item" id="nav-left">
-            <img src="assets/images/beechworth_logo.png">
+    <div id="cart-container">
+        <h4>Cart</h4>
+        <div id="cart-contents">
+            <div class="cart-item" id="empty-cart">
+                <p>Your cart is currently empty!</p>
+            </div>
         </div>
-        <div class="nav-item" id="nav-middle">
-            <ul>
-                <li><a href="index.html"><div class="nav-box nav-green">Home</div></a></li>
-                <li><a href="about.html"><div class="nav-box nav-green">About Us</div></a></li>
-                <li>
-                    <a href="categories.html"><div class="nav-box nav-green" id="products-btn" onmouseover="showProductDropdown()">Products</div></a>
-                    <div id="product-drop-down" class="nav-green" onmouseleave="hideProductDropdown()">
-                        <table>
-                            <tr><td onclick="location.href='products.html'">All Your Favourites</td></tr>
-                                <tr><td onclick="location.href=''">Gummies and Jellies</td></tr>
-                                <tr><td onclick="location.href=''">Chocolate</td></tr>
-                                <tr><td onclick="location.href=''">Fudge</td></tr>
-                                <tr><td onclick="location.href=''">Nougat</td></tr>
-                                <tr><td onclick="location.href=''">Boiled Sweets</td></tr>
-                                <tr><td onclick="location.href=''">Lollipops</td></tr>
-                                <tr><td onclick="location.href=''">Truffles</td></tr>
-                                <tr><td onclick="location.href=''">Lolly Jars</td></tr>
-                                <tr><td onclick="location.href=''">Novelty and Giftware</td></tr>
-                        </table>
-                    </div>
-                </li>
-            </ul>
+
+        <p id="cart-subtotal"><span id="subtotal-title">Subtotal</span><span id="subtotal">$$$</span></p>
+        <a class="cart-btn" href="">Checkout<img src="assets/icons/circle-arrow-right.svg"/></a>
+    </div>
+
+    <div id="search-section">
+        <div id="search-bar">
+            <img id="search-icon" src="assets/icons/magnifying-glass.svg"/>
+            <input id="search-input" type="text"/>
+            <img id="search-close" src="assets/icons/circle-xmark.svg" onclick="unblurBackground()"/>
         </div>
-        <div class="nav-item" id="nav-right">
-            <img src="assets/icons/magnifying-glass-green.png" onclick="showSearch()"/>
-            <img src="assets/icons/bag-shopping-green.png"/>
+    </div>
+
+    <div class="product-background">
+        <div class="product-container" id="product">
+            <img id="product-image" src=""/>
+            <div class="product-content">
+                <span class="rating">
+                   <img src="assets/icons/star.svg"/><span id="product-rating"></span>
+                </span>
+                
+                <span id="product-orders" class="order-count"></span>
+
+                <h4 id="product-name"></h4>
+
+                <p>
+                    <span id="product-price"></span>
+                    <span class="delimiter">|</span>
+                    <span id="product-weight"></span>
+                </p>
+                
+                <p id="product-description"></p>
+                <hr>
+                <p id="product-ingredients" class="product-information"></p>
+                <p id="product-allergens" class="product-information"></p>
+                <br>
+                <a class="add-to-cart-btn" onclick="addToCart()"><img src="assets/icons/plus-offwhite.png"/>Add To Cart</a>
+            </div>
         </div>
-    </header>
+    </div>
+
+    <div id="blur-overlay" onclick="unblurBackground()"></div>
 
     <div class="container">
         <img id="red-candy-0" class="red-candy-back" src="assets/images/red_candy_bar.png">
         <img id="red-candy-2" class="red-candy-back" src="assets/images/red_candy_bar.png">
 
-
-        <div class="flex-container">
-            <div class="textbox-1">
-                <h2>Our Mission</h2>
-                <p>For over 20 years, we've made childhood dreams real with delightful treats. Step into our store for a sensory journey, where surprises await at every turn. Indulge in our popular boiled sweets or explore our range of chocolates, including sugar-free options.</p>
-                <p>Grab a bag of lollies for a quick treat or choose from our special occasion tins and nostalgic Childhood Memory bags, filled with sweets from around the globe.</p></p>
-
-                <div class="woman-making-sweets">
-                    <img src="assets/images/woman-making-sweets.png" alt="woman-making-sweets">
-                </div>
-
-                <h2>Our History</h2>
-                <p>Founder, Judi Borschman’s vision for an ‘olde world’ sweet shop in the historic gold town of Beechworth started out in a single fronted shop in September 1992.</p>
-                <p>Judi also operated a teddy bear shop, well known for its gollies. When the town’s fairy store closed, Judi decided to combine teddies, fairies, gollies and lollies all in one shop to deliver her vision for a fun store which revived childhood memories. Her addition of quirky gifts means the store draws in people of all ages.</p>
-                <p>The mix is obviously working as the Beechworth Sweet Co has expanded to fill three shops and employs 18 staff.</p>
-                <p>The Beechworth Sweet Co earned its reputation through these years for not only sourcing the finest quality confectionary but also providing a magical experience for their customers.</p>
-                <p>Famous for its award-winning window displays, wide variety of confectionary and quirky non-confectionary gifts, the Beechworth Sweet Co now offers a blend of ‘olde world’ charm with treats from a bygone era, sweets from other countries and all the modern day favourites.</p>
+        <header>
+            <div class="nav-item" id="nav-left">
+                <img src="assets/images/beechworth_logo.png" onclick="location.href='index.html'">
             </div>
+            <div class="nav-item" id="nav-middle">
+                <ul>
+                    <li><a href="index.html"><div class="nav-box nav-green">Home</div></a></li>
+                    <li><a href="about.html"><div class="nav-box nav-green">About Us</div></a></li>
+                    <li class="products-nav-container">
+                        <a href="categories.html"><div class="nav-box nav-green" id="products-btn" onmouseover="showProductDropdown('green')">Products</div></a>
+                        <div id="product-drop-down" class="nav-green" onmouseleave="hideProductDropdown('green')">
+                            <table>
+                                <tr><td onclick="location.href='products.html'">All Your Favourites</td></tr>
+                                <tr><td onclick="location.href='products.html'">Gummies and Jellies</td></tr>
+                                <tr><td onclick="location.href='products.html'">Chocolate</td></tr>
+                                <tr><td onclick="location.href='products.html'">Fudge</td></tr>
+                                <tr><td onclick="location.href='products.html'">Nougat</td></tr>
+                                <tr><td onclick="location.href='products.html'">Boiled Sweets</td></tr>
+                                <tr><td onclick="location.href='products.html'">Lollipops</td></tr>
+                                <tr><td onclick="location.href='products.html'">Truffles</td></tr>
+                                <tr><td onclick="location.href='products.html'">Lolly Jars</td></tr>
+                                <tr><td onclick="location.href='products.html'">Novelty and Giftware</td></tr>
+                            </table>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="nav-item" id="nav-right">
+                <img src="assets/icons/magnifying-glass-green.png" onclick="showSearch()"/>
+                <div id="cart-count">0</div>
+                <img src="assets/icons/bag-shopping-green.png" onclick="showCart()"/>
+            </div>
+        </header>
+        <div class="about-container">
+            <h2>The Experience</h2>
+            <p>Visitors remark that entering our store reminds them of a cross between Alice In Wonderland, Aladdin’s Cave and Charlie and the Chocolate Factory. <br><br>
+
+                The Beechworth Sweet Co promises an end to boredom and a sweet journey to new discoveries and endless possibilities - come in and experience it for yourself. <br><br>
+                
+                There’s the very real prospect that you will come across the White Rabbit and the Mad Hatter in the store. You will find rare and interesting gems among the treats and lively displays – possibly a genie’s bottle. It’s the sort of place you could imagine discovering a chocolate bar with a golden ticket. Then there’s always Mr Frog. <br><br>
+                
+                We invite you to soak up the experience. For what looks like a small store, you end up feeling like you have walked through a treasure trove. <br><br>
+                
+                “Wow!” is the common reaction from visitors of all ages. <br><br>
+                
+                Our focus is on maintaining that wow factor with new product ranges, regularly changing speciality areas in every corner of the store, including the fairy table, ceiling decorations, gorgeous packaging for your gifts and of course knowledgeable and helpful staff. <br><br>
+                
+                Come in. Taste the magic. See what’s new. Experience the wonder.</p>
+
+            <h2>Our Mission</h2>
+            <p>For over 20 years, we've made childhood dreams real with delightful treats. Step into our store for a sensory journey, where surprises await at every turn. Indulge in our popular boiled sweets or explore our range of chocolates, including sugar-free options.</p>
+            <p>Grab a bag of lollies for a quick treat or choose from our special occasion tins and nostalgic Childhood Memory bags, filled with sweets from around the globe.</p></p>
+
+            <div class="about-images">
+                <img src="assets/images/woman-making-sweets.png" alt="woman-making-sweets">
+            </div>
+
+            <h2>Our History</h2>
+            <p>Founder, Judi Borschman’s vision for an ‘olde world’ sweet shop in the historic gold town of Beechworth started out in a single fronted shop in September 1992.</p>
+            <p>Judi also operated a teddy bear shop, well known for its gollies. When the town’s fairy store closed, Judi decided to combine teddies, fairies, gollies and lollies all in one shop to deliver her vision for a fun store which revived childhood memories. Her addition of quirky gifts means the store draws in people of all ages.</p>
+            <p>The mix is obviously working as the Beechworth Sweet Co has expanded to fill three shops and employs 18 staff.</p>
+            <p>The Beechworth Sweet Co earned its reputation through these years for not only sourcing the finest quality confectionary but also providing a magical experience for their customers.</p>
+            <p>Famous for its award-winning window displays, wide variety of confectionary and quirky non-confectionary gifts, the Beechworth Sweet Co now offers a blend of ‘olde world’ charm with treats from a bygone era, sweets from other countries and all the modern day favourites.</p>
+            
+            <div class="about-images">
+                <img src="assets/images/old-poster.jpg"/>
+            </div>
+            
         </div>
     </div>
 </body>

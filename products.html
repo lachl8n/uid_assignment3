@@ -17,7 +17,7 @@
         <h4>Cart</h4>
 
         <div id="cart-contents">
-            <div class="cart-item" id="empty-cart">
+            <div class="empty-cart" id="empty-cart">
                 <p>Your cart is currently empty!</p>
             </div>
             
@@ -77,7 +77,7 @@
         </div>
 
         <p id="cart-subtotal"><span id="subtotal-title">Subtotal</span><span id="subtotal">$$$</span></p>
-        <a class="cart-btn" href="checkout.html" onclick="saveDataToLocalStorage()">Checkout<img src="assets/icons/circle-arrow-right.svg"/></a>
+        <a id="cart-btn" class="cart-btn" href="checkout.html" onclick="saveDataToLocalStorage()">Checkout<img src="assets/icons/circle-arrow-right.svg"/></a>
     </div>
 
     <div id="search-section">
@@ -122,7 +122,7 @@
         <div id="page-content">
             <header>
                 <div class="nav-item" id="nav-left">
-                    <img src="assets/images/beechworth_logo.png">
+                    <img src="assets/images/beechworth_logo.png" onclick="location.href='index.html'">
                 </div>
                 <div class="nav-item" id="nav-middle">
                     <ul>
@@ -133,15 +133,15 @@
                             <div id="product-drop-down" class="nav-green" onmouseleave="hideProductDropdown('green')">
                                 <table>
                                     <tr><td onclick="location.href='products.html'">All Your Favourites</td></tr>
-                                    <tr><td onclick="location.href=''">Gummies and Jellies</td></tr>
-                                    <tr><td onclick="location.href=''">Chocolate</td></tr>
-                                    <tr><td onclick="location.href=''">Fudge</td></tr>
-                                    <tr><td onclick="location.href=''">Nougat</td></tr>
-                                    <tr><td onclick="location.href=''">Boiled Sweets</td></tr>
-                                    <tr><td onclick="location.href=''">Lollipops</td></tr>
-                                    <tr><td onclick="location.href=''">Truffles</td></tr>
-                                    <tr><td onclick="location.href=''">Lolly Jars</td></tr>
-                                    <tr><td onclick="location.href=''">Novelty and Giftware</td></tr>
+                                    <tr><td onclick="location.href='products.html'">Gummies and Jellies</td></tr>
+                                    <tr><td onclick="location.href='products.html'">Chocolate</td></tr>
+                                    <tr><td onclick="location.href='products.html'">Fudge</td></tr>
+                                    <tr><td onclick="location.href='products.html'">Nougat</td></tr>
+                                    <tr><td onclick="location.href='products.html'">Boiled Sweets</td></tr>
+                                    <tr><td onclick="location.href='products.html'">Lollipops</td></tr>
+                                    <tr><td onclick="location.href='products.html'">Truffles</td></tr>
+                                    <tr><td onclick="location.href='products.html'">Lolly Jars</td></tr>
+                                    <tr><td onclick="location.href='products.html'">Novelty and Giftware</td></tr>
                                 </table>
                             </div>
                         </li>
