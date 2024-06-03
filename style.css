@@ -849,6 +849,10 @@ hr {
         padding: 15px 2.5%;
         list-style: none;
     }
+
+    .about-images{
+        max-width: 30%;
+    }
     
     
 }
@@ -1016,7 +1020,7 @@ body{
     
 }
 
-@media only screen and  (max-width: 358px) {
+@media only screen and  (max-width: 390px) {
     
     .textbox-1 {
         width:100%;
@@ -1040,84 +1044,17 @@ body{
         display: flex;
         opacity: 100%;
     }
+
+    .about-images img {
+        width: 15rem; /* Adjust the percentage as needed */
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+   
 }
 
-@media only screen and  (max-width: 600px) {
-    
-    .textbox-1 {
-        width:100%;
-        max-width: 100%;
-        padding: 20px;
-        box-sizing:border-box;
-        /*margin: auto; */ 
-    }
-
-    #red-candy-0, #red-candy-2 {
-        display: none;
-    }
-
-    .laptop-header {
-        display: none;
-        opacity: 0;
-    }
-
-    .phone-header {
-        display: flex;
-        opacity: 100%;
-    }
-}
-
-@media only screen and  (min-width: 601px) {
-    
-    .textbox-1 {
-        width:90%;
-        max-width: 90%;
-        padding: 20px;
-        box-sizing:border-box;
-        /*margin: auto; */ 
-    }
-
-    #red-candy-0, #red-candy-2 {
-        display: none;
-    }
-
-    .laptop-header {
-        display: none;
-        opacity: 0;
-    }
-
-    .phone-header {
-        display: flex;
-        opacity: 100%;
-    }
-}
-/* <600px, 601px, 768px, 992px, 1200px */
-
-@media only screen and (min-width: 768px) {
-    
-    .textbox-1 {
-        width: 60%;
-        max-height: 60%;
-        /* margin: auto; */ 
-        
-    }
-
-    #red-candy-0, #red-candy-2 {
-        display: none;
-    }
-
-    .laptop-header {
-        display: none;
-        opacity: 0;
-    }
-
-    .phone-header {
-        display: flex;
-        opacity: 100%;
-    }
-}
-
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 912px) {
     .textbox-1 {
         width: 50%;
         max-width: 50%;
@@ -1137,27 +1074,7 @@ body{
         opacity: 100%;
     }
 }
-/* surface pro 7 */
-@media only screen and (min-width: 1368px) {
-    .textbox-1 {
-        width: 40%;
-        max-width: 40%;
-    }
 
-    #red-candy-0, #red-candy-2 {
-        display: flex;
-    }
-
-    .phone-header {
-        display: none;
-        opacity: 0;
-    }
-
-    .laptop-header {
-        display: flex;
-        opacity: 100%;
-    }
-}
 
 
 /* categories responsiveness */
