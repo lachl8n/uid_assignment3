@@ -1078,68 +1078,91 @@ body{
 
 
 /* categories responsiveness */
-/*Iphone 12 Pro*/
-@media only screen and (max-width: 390px){
-    /*navbar*/
-    .nav-item{
+
+/* General styles for larger screens */
+.about-images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; 
+    justify-content: center;
+}
+
+.about-images img {
+    max-width: 48%; 
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+/* Iphone 12 Pro */
+@media only screen and (max-width: 390px) {
+    /* navbar */
+    .nav-item {
         height: auto;
         margin: 0 10px;
     }
 
-    #nav-middle{
-        width:100%;
+    #nav-middle {
+        width: 100%;
         margin-left: 0;
     }
 
-    #nav-middle > ul > li{
-        display:block;
+    #nav-middle > ul > li {
+        display: block;
         padding: 10px 5%;
     }
 
-    .nav-box{
-        font-size: 14px; /*maybe fix this */
+    .nav-box {
+        font-size: 14px; /* maybe fix this */
         padding: 5px 10px;
-
     }
 
-    #nav-right{
+    #nav-right {
         margin-right: 20px;
     }
 
-    #nav-right > img{
+    #nav-right > img {
         height: 30px;
         margin: 20px 10px;
     }
 
-    /*product slider */
-    .product-slider{
-        flex-direction: column;
+    /* product slider */
+    .product-slider {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
         margin: 20px 1rem;
     }
 
-    .homepage-category{
-        width: 80%;
+    /* elements */
+
+    .product-slider{
+        width:48%;
+        margin-bottom: 20px;
+    }
+    .content {
+        width: 60%;
         margin-bottom: 20px;
     }
     
-    .homepage-category > img{
-        height:auto;
+    .content > img {
+        height: 40%;
+        width: 40%;
     }
 
-    /*search section */
+    /* search section */
     #search-bar {
-        width:90%;
+        width: 90%;
     }
 
-    #search-section > #search-bar > input{
+    #search-section > #search-bar > input {
         font-size: 20px;
     }
 }
 
-/*media query for surface pro 7 */
-@media only screen and (max-width: 912px){
-    /*navbar */
-    .nav-item{
+/* media query for Surface Pro 7 */
+@media only screen and (max-width: 912px) {
+    /* navbar */
+    .nav-item {
         height: auto;
         margin: 0 15px;
     }
@@ -1149,47 +1172,48 @@ body{
         margin-left: 0;
     }
 
-    #nav-middle > ul > li{
+    #nav-middle > ul > li {
         padding: 10px 3%;
     }
 
-    .nav-box{
+    .nav-box {
         font-size: 16px;
-        padding: 8 px 15 px;
+        padding: 8px 15px;
     }
 
-    #nav-right{
+    #nav-right {
         margin-right: 30px;
     }
 
-    #nav-right > img{
-        height:35px;
+    #nav-right > img {
+        height: 35px;
         margin: 25px 15px;
     }
 
     /* product slider */
-    .product-slider{
-        flex-direction: row;
+    .product-slider {
+        display: flex;
         flex-wrap: wrap;
-        justify-content: space-around;
+        justify-content: space-between;
         margin: 20px 5rem;
     }
 
-    .homepage-category{
+    .homepage-category {
         width: 45%;
         margin-bottom: 20px;
     }
 
-    .homepage-cateogry > img{
+    .homepage-category > img {
         height: auto;
+        width: 100%;
     }
 
-    /*search section */
+    /* search section */
     #search-bar {
         width: 80%;
     }
 
-    #search-section > #search-bar > input{
+    #search-section > #search-bar > input {
         font-size: 25px;
     }
 
@@ -1201,6 +1225,15 @@ body{
     .laptop-header {
         display: flex;
         opacity: 100%;
+    }
+    .content {
+        width: 65%;
+        margin-bottom: 20px;
+    }
+    
+    .content > img {
+        height: 40%;
+        width: 40%;
     }
 }
 
