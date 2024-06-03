@@ -1030,6 +1030,16 @@ body{
     #red-candy-0, #red-candy-2 {
         display: none;
     }
+
+    .laptop-header {
+        display: none;
+        opacity: 0;
+    }
+
+    .phone-header {
+        display: flex;
+        opacity: 100%;
+    }
 }
 
 @media only screen and  (max-width: 600px) {
@@ -1044,6 +1054,16 @@ body{
 
     #red-candy-0, #red-candy-2 {
         display: none;
+    }
+
+    .laptop-header {
+        display: none;
+        opacity: 0;
+    }
+
+    .phone-header {
+        display: flex;
+        opacity: 100%;
     }
 }
 
@@ -1060,6 +1080,16 @@ body{
     #red-candy-0, #red-candy-2 {
         display: none;
     }
+
+    .laptop-header {
+        display: none;
+        opacity: 0;
+    }
+
+    .phone-header {
+        display: flex;
+        opacity: 100%;
+    }
 }
 /* <600px, 601px, 768px, 992px, 1200px */
 
@@ -1075,6 +1105,16 @@ body{
     #red-candy-0, #red-candy-2 {
         display: none;
     }
+
+    .laptop-header {
+        display: none;
+        opacity: 0;
+    }
+
+    .phone-header {
+        display: flex;
+        opacity: 100%;
+    }
 }
 
 @media only screen and (min-width: 992px) {
@@ -1086,6 +1126,16 @@ body{
     #red-candy-0, #red-candy-2 {
         display: none;
     }
+
+    .laptop-header {
+        display: none;
+        opacity: 0;
+    }
+
+    .phone-header {
+        display: flex;
+        opacity: 100%;
+    }
 }
 /* surface pro 7 */
 @media only screen and (min-width: 1368px) {
@@ -1096,6 +1146,16 @@ body{
 
     #red-candy-0, #red-candy-2 {
         display: flex;
+    }
+
+    .phone-header {
+        display: none;
+        opacity: 0;
+    }
+
+    .laptop-header {
+        display: flex;
+        opacity: 100%;
     }
 }
 
@@ -1215,6 +1275,16 @@ body{
     #search-section > #search-bar > input{
         font-size: 25px;
     }
+
+    .phone-header {
+        display: none;
+        opacity: 0;
+    }
+
+    .laptop-header {
+        display: flex;
+        opacity: 100%;
+    }
 }
 
 /* index responsiveness */
@@ -1304,6 +1374,8 @@ body{
         width: 100%;
         margin-bottom: 20px;
     }
+
+
 }
 
 /* for products page */
@@ -1364,25 +1436,25 @@ header{
         width:90%;
     }
 
-    .phone-header {
-        display: flex;
-    }
-
     .laptop-header {
         display: none;
+        opacity: 0;
     }
 
-}
+    .phone-header {
+        display: flex;
+        opacity: 100%;
+    }
 
-.phone-header {
-    display: none;
 }
 
 .phone-header {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    gap: 0;
+}
+
+.phone-header .nav-item {
+    margin: 0;
 }
 
 .phone-header #nav-left {
@@ -1392,12 +1464,11 @@ header{
 }
 
 .phone-header #nav-left img {
-    width: 40%;
+    width: 50%;
 }
 
 .phone-header #nav-middle {
-    width: 1rem;
-    margin-left: -4rem;
+    width: 50%;
 }
 
 .phone-header #nav-middle img {
@@ -1406,7 +1477,8 @@ header{
 }
 
 .phone-header #nav-right {
-    margin: 0;
+    width: 20%;
+    margin: 1rem;
 }
 
 .phone-header #nav-right img {
