@@ -1106,7 +1106,7 @@ body{
     /*navbar*/
     .nav-item{
         height: auto;
-        margin 0 10px;
+        margin: 0 10px;
     }
 
     #nav-middle{
@@ -1320,10 +1320,10 @@ header{
 }
 
 @media screen and (max-width: 912px){
-    #nav-middle{
+    /* #nav-middle{
         width: 60%;
         margin-left: 70px;
-    }
+    } */
 
     .product-slider{
         margin: 20px 10rem;
@@ -1336,20 +1336,6 @@ header{
 }
 
 @media screen and (max-width: 390px){
-    header{
-        flex-direction: column;
-        align-items: center;
-    }
-
-    #nav-middle {
-        width: 100%;
-        margin: 0;
-        text-align: center;
-    }
-
-    #nav-middle > ul > li{
-        padding: 10px 1.5%;
-    }
 
     .product-slider{
         flex-direction: column;
@@ -1378,4 +1364,53 @@ header{
         width:90%;
     }
 
+    .phone-header {
+        display: flex;
+    }
+
+    .laptop-header {
+        display: none;
+    }
+
+}
+
+.phone-header {
+    display: none;
+}
+
+.phone-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 0;
+}
+
+.phone-header #nav-left {
+    width: 20%;
+    text-align: center;
+    margin: 0;
+}
+
+.phone-header #nav-left img {
+    width: 40%;
+}
+
+.phone-header #nav-middle {
+    width: 1rem;
+    margin-left: -4rem;
+}
+
+.phone-header #nav-middle img {
+    width: 7rem;
+    margin-top: 0.8rem;
+}
+
+.phone-header #nav-right {
+    margin: 0;
+}
+
+.phone-header #nav-right img {
+    width: 2rem;
+    height: 2rem;
+    margin-right: 2.5rem;
 }
