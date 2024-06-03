@@ -12,6 +12,28 @@
     <title>The Beechworth Sweets Co. - Products</title>
 </head>
 <body id="body">
+    <div class="phone-menu" id="phone-menu">
+        <div class="menu-header">
+            <img class="menu-header-logo" src="assets/images/beechworth_logo.png">
+            <img class="menu-close" src="assets/icons/circle-xmark.svg" onclick="document.getElementById('phone-menu').style.display = 'none'">
+        </div>
+
+        <div class="menu-item" onclick="location.href='index.html'">Home</div>
+        <div class="menu-item" onclick="location.href='about.html'">About Us</div>
+        <div class="menu-item" onclick="location.href='Categories.html'">Products</div>
+
+
+        <div class="menu-products">
+            <div class="menu-item product-item" onclick="location.href='products.html'">All Your Favourites</div>
+            <div class="menu-item product-item" onclick="location.href='products.html'">Gummies & Jellies</div>
+            <div class="menu-item product-item" onclick="location.href='products.html'">Fudge</div>
+            <div class="menu-item product-item" onclick="location.href='products.html'">Nougat</div>
+            <div class="menu-item product-item" onclick="location.href='products.html'">Boiled Sweets</div>
+            <div class="menu-item product-item" onclick="location.href='products.html'">Lollipops</div>
+            <div class="menu-item product-item" onclick="location.href='products.html'">Chocolate</div>
+            <div class="menu-item product-item" onclick="location.href='products.html'">Lolly Jars & Tints</div>
+        </div>
+    </div>
 
     <div id="cart-container">
         <h4>Cart</h4>
@@ -20,60 +42,6 @@
             <div class="empty-cart" id="empty-cart">
                 <p>Your cart is currently empty!</p>
             </div>
-            
-    <!--             
-                <div class="cart-item">
-                    <div class="cart-item-col-1">
-                        <img src="assets/images/products/bananas.jpeg"/>
-                    </div>
-                    <div class="cart-item-col-2">
-                        <h5>Bananas</h5>
-                        <p>$6.00</p>
-                        <div class="quantity">
-                            <table>
-                                <tr>
-                                    <td class="quantity-col quantity-col-1" style="border-right: none;"><img src="assets/icons/minus.svg"/></td>
-                                    <td id="quantity-1" class="quantity-col quantity-col-2">55</td>
-                                    <td class="quantity-col quantity-col-3" style="border-left: none;" onclick="incrementQuantity()"><img src="assets/icons/plus.svg"/></td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="cart-item">
-                    <div class="cart-item-col-1">
-                        <img src="assets/images/products/conversation-hearts.png">
-                    </div>
-                    <div class="cart-item-col-2">
-                        <div class=cart-item-row>
-                            <h5>Bananas</h5>
-                        </div>
-
-                        <div class="cart-item-row cart-item-row-2">
-                            <div class="cart-item-row-col">
-                                <p>$6.00</p>
-                            </div>
-                            <div class="cart-item-row-col">
-                                <div class="quantity">
-                                    <table>
-                                        <tbody>
-                                            <tr>
-                                                <td class="quantity-col quantity-col-1" style="border-right: none;">
-                                                    <img src="assets/icons/minus.svg">
-                                                </td>
-                                                <td class="quantity-col quantity-col-2" id="quantity-10">1</td>
-                                                <td class="quantity-col quantity-col-3" style="border-left: none;">
-                                                    <img src="assets/icons/plus.svg">
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
         </div>
 
         <p id="cart-subtotal"><span id="subtotal-title">Subtotal</span><span id="subtotal">$$$</span></p>
@@ -156,14 +124,14 @@
 
             <header class="phone-header">
                 <div class="nav-item" id="nav-left">
-                    <img src="assets/icons/bars.svg" onclick="location.href='index.html'">
+                    <img src="assets/icons/bars.svg" onclick="document.getElementById('phone-menu').style.display = 'table'">
                 </div>
                 <div class="nav-item" id="nav-middle">
                     <img src="assets/images/beechworth_logo.png" onclick="location.href='index.html'">
                 </div>
                 <div class="nav-item" id="nav-right">
                     <div id="cart-count">0</div>
-                    <img src="assets/icons/bag-shopping-tan.png" onclick="showCart()"/>
+                    <img src="assets/icons/bag-shopping-green.png" onclick="showCart()"/>
                 </div>
             </header>
 

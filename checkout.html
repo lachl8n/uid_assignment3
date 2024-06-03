@@ -12,6 +12,28 @@
     <title>The Beechworth Sweets Co. - Products</title>
 </head>
 <body id="body" onload="populateCart()">
+    <div class="phone-menu" id="phone-menu">
+        <div class="menu-header">
+            <img class="menu-header-logo" src="assets/images/beechworth_logo.png">
+            <img class="menu-close" src="assets/icons/circle-xmark.svg" onclick="document.getElementById('phone-menu').style.display = 'none'">
+        </div>
+
+        <div class="menu-item" onclick="location.href='index.html'">Home</div>
+        <div class="menu-item" onclick="location.href='about.html'">About Us</div>
+        <div class="menu-item" onclick="location.href='Categories.html'">Products</div>
+
+
+        <div class="menu-products">
+            <div class="menu-item product-item" onclick="location.href='products.html'">All Your Favourites</div>
+            <div class="menu-item product-item" onclick="location.href='products.html'">Gummies & Jellies</div>
+            <div class="menu-item product-item" onclick="location.href='products.html'">Fudge</div>
+            <div class="menu-item product-item" onclick="location.href='products.html'">Nougat</div>
+            <div class="menu-item product-item" onclick="location.href='products.html'">Boiled Sweets</div>
+            <div class="menu-item product-item" onclick="location.href='products.html'">Lollipops</div>
+            <div class="menu-item product-item" onclick="location.href='products.html'">Chocolate</div>
+            <div class="menu-item product-item" onclick="location.href='products.html'">Lolly Jars & Tints</div>
+        </div>
+    </div>
 
     <div id="cart-container">
         <h4>Cart</h4>
@@ -74,14 +96,14 @@
 
             <header class="phone-header">
                 <div class="nav-item" id="nav-left">
-                    <img src="assets/icons/bars.svg" onclick="location.href='index.html'">
+                    <img src="assets/icons/bars.svg" onclick="document.getElementById('phone-menu').style.display = 'table'">
                 </div>
                 <div class="nav-item" id="nav-middle">
                     <img src="assets/images/beechworth_logo.png" onclick="location.href='index.html'">
                 </div>
                 <div class="nav-item" id="nav-right">
                     <div id="cart-count">0</div>
-                    <img src="assets/icons/bag-shopping-tan.png" onclick="showCart()"/>
+                    <img src="assets/icons/bag-shopping-green.png" onclick="showCart()"/>
                 </div>
             </header>
             

@@ -14,6 +14,29 @@
 </head>
 
 <body style="background-color:rgb(255, 249, 226);">
+    <div class="phone-menu" id="phone-menu">
+        <div class="menu-header">
+            <img class="menu-header-logo" src="assets/images/beechworth_logo.png">
+            <img class="menu-close" src="assets/icons/circle-xmark.svg" onclick="document.getElementById('phone-menu').style.display = 'none'">
+        </div>
+
+        <div class="menu-item" onclick="location.href='index.html'">Home</div>
+        <div class="menu-item" onclick="location.href='about.html'">About Us</div>
+        <div class="menu-item" onclick="location.href='Categories.html'">Products</div>
+
+
+        <div class="menu-products">
+            <div class="menu-item product-item" onclick="location.href='products.html'">All Your Favourites</div>
+            <div class="menu-item product-item" onclick="location.href='products.html'">Gummies & Jellies</div>
+            <div class="menu-item product-item" onclick="location.href='products.html'">Fudge</div>
+            <div class="menu-item product-item" onclick="location.href='products.html'">Nougat</div>
+            <div class="menu-item product-item" onclick="location.href='products.html'">Boiled Sweets</div>
+            <div class="menu-item product-item" onclick="location.href='products.html'">Lollipops</div>
+            <div class="menu-item product-item" onclick="location.href='products.html'">Chocolate</div>
+            <div class="menu-item product-item" onclick="location.href='products.html'">Lolly Jars & Tints</div>
+        </div>
+    </div>
+
     <div id="cart-container">
         <h4>Cart</h4>
         <div id="cart-contents">
@@ -68,7 +91,7 @@
         <img id="red-candy-0" class="red-candy-back" src="assets/images/red_candy_bar.png">
         <img id="red-candy-2" class="red-candy-back" src="assets/images/red_candy_bar.png">
 
-        <header>
+        <header class="laptop-header">
             <div class="nav-item" id="nav-left">
                 <img src="assets/images/beechworth_logo.png" onclick="location.href='index.html'">
             </div>
@@ -101,6 +124,20 @@
                 <img src="assets/icons/bag-shopping-green.png" onclick="showCart()"/>
             </div>
         </header>
+
+        <header class="phone-header">
+            <div class="nav-item" id="nav-left">
+                <img src="assets/icons/bars.svg" onclick="document.getElementById('phone-menu').style.display = 'table'">
+            </div>
+            <div class="nav-item" id="nav-middle">
+                <img src="assets/images/beechworth_logo.png" onclick="location.href='index.html'">
+            </div>
+            <div class="nav-item" id="nav-right">
+                <div id="cart-count">0</div>
+                <img src="assets/icons/bag-shopping-green.png" onclick="showCart()"/>
+            </div>
+        </header>
+
         <div class="about-container">
             <h2>The Experience</h2>
             <p>Visitors remark that entering our store reminds them of a cross between Alice In Wonderland, Aladdin’s Cave and Charlie and the Chocolate Factory. <br><br>
