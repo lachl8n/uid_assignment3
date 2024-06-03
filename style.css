@@ -329,6 +329,7 @@ h2 {
     z-index: 1;
 }
 
+/* media query */
 .homepage-product {
     /* background-color: red; */
     display: flex;
@@ -819,4 +820,562 @@ hr {
     border-radius: 10rem;
     line-height: 1.2rem;
     display: none;
+}
+
+/* responsiveness check */
+/* about screen */
+
+/* nav bar */
+@media only screen and (max-width: 600px){
+    .nav-item {
+        height: 100px;
+        margin: 0 20px;
+        /* background-color: red; */
+    }
+    
+    #nav-left > img {
+        height: 100px;
+    }
+    
+    #nav-middle {
+        text-align: center;
+        width: 50%;
+        position: relative;
+        margin-left: 135px;
+    }
+    
+    #nav-middle > ul > li {
+        display: inline-block;
+        padding: 15px 2.5%;
+        list-style: none;
+    }
+    
+    
+}
+
+/* candies 
+
+@media only screen and (max-width: 600px){
+    .container > .box-1 > img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        height: 100%;
+        border-radius: 60px 60px 0px 0px;
+    }
+    
+    .container > .box-1 > h3 {
+        margin-top: 60%;
+    }
+    
+    .container {
+        padding-bottom: 50%;
+        float: left;
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 601px){
+    .container > .box-1 > img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        height: 100%;
+        border-radius: 60px 60px 0px 0px;
+    }
+    
+    .container > .box-1 > h3 {
+        margin-top: 60%;
+    }
+    
+    .container {
+        padding-bottom: 50%;
+        float: left;
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 768px){
+    .container > .box-1 > img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        height: 100%;
+        border-radius: 60px 60px 0px 0px;
+    }
+    
+    .container > .box-1 > h3 {
+        margin-top: 60%;
+    }
+    
+    .container {
+        padding-bottom: 50%;
+        float: left;
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 992px){
+    .container > .box-1 > img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        height: 100%;
+        border-radius: 60px 60px 0px 0px;
+    }
+    
+    .container > .box-1 > h3 {
+        margin-top: 60%;
+    }
+    
+    .container {
+        padding-bottom: 50%;
+        float: left;
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 1368px){
+    .container > .box-1 > img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        height: 100%;
+        border-radius: 60px 60px 0px 0px;
+    }
+    
+    .container > .box-1 > h3 {
+        margin-top: 60%;
+    }
+    
+    .container {
+        padding-bottom: 50%;
+        float: left;
+        width: 100%;
+    }
+}
+*/
+
+/* General container and image styling */
+.candy-container {
+    padding-bottom: 50%;
+    width: 100%;
+    float: left;
+    position: relative; /* Ensures child elements can be positioned absolutely */
+}
+
+.candy-container > img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: auto; /* Keeps aspect ratio */
+    border-radius: 60px 60px 0px 0px;
+}
+
+/* Additional styling for h3 if needed */
+.candy-container > .box-1 > h3 {
+    margin-top: 60%;
+}
+
+/* Media query for larger screens if specific adjustments are needed */
+@media only screen and (min-width: 600px) {
+    .candy-container {
+        padding-bottom: 50%;
+        float: left;
+        width: 100%;
+    }
+}
+
+
+
+/* text*/
+
+
+body{
+    margin:0;
+    padding:0;
+}
+.container{
+    margin:0;
+    padding:0;
+}
+
+.flex-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* padding: 10px; */
+    box-sizing: border-box;
+    
+}
+
+@media only screen and  (max-width: 358px) {
+    
+    .textbox-1 {
+        width:100%;
+        max-width: 100%;
+        padding: 20px;
+        box-sizing:border-box;
+        /*margin: auto; */
+        margin-top: -30px; 
+    }
+
+    #red-candy-0, #red-candy-2 {
+        display: none;
+    }
+}
+
+@media only screen and  (max-width: 600px) {
+    
+    .textbox-1 {
+        width:100%;
+        max-width: 100%;
+        padding: 20px;
+        box-sizing:border-box;
+        /*margin: auto; */ 
+    }
+
+    #red-candy-0, #red-candy-2 {
+        display: none;
+    }
+}
+
+@media only screen and  (min-width: 601px) {
+    
+    .textbox-1 {
+        width:90%;
+        max-width: 90%;
+        padding: 20px;
+        box-sizing:border-box;
+        /*margin: auto; */ 
+    }
+
+    #red-candy-0, #red-candy-2 {
+        display: none;
+    }
+}
+/* <600px, 601px, 768px, 992px, 1200px */
+
+@media only screen and (min-width: 768px) {
+    
+    .textbox-1 {
+        width: 60%;
+        max-height: 60%;
+        /* margin: auto; */ 
+        
+    }
+
+    #red-candy-0, #red-candy-2 {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .textbox-1 {
+        width: 50%;
+        max-width: 50%;
+    }
+
+    #red-candy-0, #red-candy-2 {
+        display: none;
+    }
+}
+/* surface pro 7 */
+@media only screen and (min-width: 1368px) {
+    .textbox-1 {
+        width: 40%;
+        max-width: 40%;
+    }
+
+    #red-candy-0, #red-candy-2 {
+        display: flex;
+    }
+}
+
+
+/* categories responsiveness */
+/*Iphone 12 Pro*/
+@media only screen and (max-width: 390px){
+    /*navbar*/
+    .nav-item{
+        height: auto;
+        margin 0 10px;
+    }
+
+    #nav-middle{
+        width:100%;
+        margin-left: 0;
+    }
+
+    #nav-middle > ul > li{
+        display:block;
+        padding: 10px 5%;
+    }
+
+    .nav-box{
+        font-size: 14px; /*maybe fix this */
+        padding: 5px 10px;
+
+    }
+
+    #nav-right{
+        margin-right: 20px;
+    }
+
+    #nav-right > img{
+        height: 30px;
+        margin: 20px 10px;
+    }
+
+    /*product slider */
+    .product-slider{
+        flex-direction: column;
+        margin: 20px 1rem;
+    }
+
+    .homepage-category{
+        width: 80%;
+        margin-bottom: 20px;
+    }
+    
+    .homepage-category > img{
+        height:auto;
+    }
+
+    /*search section */
+    #search-bar {
+        width:90%;
+    }
+
+    #search-section > #search-bar > input{
+        font-size: 20px;
+    }
+}
+
+/*media query for surface pro 7 */
+@media only screen and (max-width: 912px){
+    /*navbar */
+    .nav-item{
+        height: auto;
+        margin: 0 15px;
+    }
+    
+    #nav-middle {
+        width: 70%;
+        margin-left: 0;
+    }
+
+    #nav-middle > ul > li{
+        padding: 10px 3%;
+    }
+
+    .nav-box{
+        font-size: 16px;
+        padding: 8 px 15 px;
+    }
+
+    #nav-right{
+        margin-right: 30px;
+    }
+
+    #nav-right > img{
+        height:35px;
+        margin: 25px 15px;
+    }
+
+    /* product slider */
+    .product-slider{
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin: 20px 5rem;
+    }
+
+    .homepage-category{
+        width: 45%;
+        margin-bottom: 20px;
+    }
+
+    .homepage-cateogry > img{
+        height: auto;
+    }
+
+    /*search section */
+    #search-bar {
+        width: 80%;
+    }
+
+    #search-section > #search-bar > input{
+        font-size: 25px;
+    }
+}
+
+/* index responsiveness */
+/* iphone 12 pro */
+@media screen and (max-width: 390px){
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-item{
+        height: auto;
+        margin: 0 10px;
+    }
+
+    #nav-middle{
+        margin-left: 0;
+        width:100%;
+    }
+
+    #nav-middle > ul > li{
+        padding: 10px 1.25%;
+    }
+
+    #search-bar{
+        width:90%;
+    }
+
+    .container > .box-1{
+        margin: 20px;
+        text-align: center;
+    }
+
+    .homepage-buttons{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .product-slider{
+        flex-direction: column;
+        margin: 20px;
+
+    }
+
+    .homepage-category, .homepage-product{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+}
+
+/* Surface Pro 7 */
+@media screen and (max-width: 912px){
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-item{
+        height:auto;
+        margin: 0 10px;
+    }
+
+    #nav-middle > ul > li{
+        padding: 10px 1.25%;
+    }
+
+    #search-bar {
+        width: 70%;
+    }
+
+    .container> .box-1{
+        margin: 20px;
+        text-align: center;
+    }
+
+    .homepage-buttons{
+        display:flex;
+        flex-direction: column;
+    }
+
+    .product-slider{
+        flex-direction: column;
+        margin: 20px;
+    }
+    .homepage-category, .homepage-product{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+/* for products page */
+body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+header{
+    flex-wrap: wrap;
+    padding: 1rem;
+}
+
+@media screen and (max-width: 912px){
+    #nav-middle{
+        width: 60%;
+        margin-left: 70px;
+    }
+
+    .product-slider{
+        margin: 20px 10rem;
+    }
+
+    .homepage-product{
+        width: 40%;
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 390px){
+    header{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #nav-middle {
+        width: 100%;
+        margin: 0;
+        text-align: center;
+    }
+
+    #nav-middle > ul > li{
+        padding: 10px 1.5%;
+    }
+
+    .product-slider{
+        flex-direction: column;
+        margin: 20px 2rem;
+    }
+
+    .homepage-product{
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .product-content{
+        width: 14rem;
+        padding: 2rem 1.5rem;
+    }
+
+    .product-container > img{
+        width: 10rem;
+    }
+
+    .add-to-cart-btn{
+        padding: 10px 20%;
+    }
+
+    #cart-container{
+        width:90%;
+    }
+
 }
