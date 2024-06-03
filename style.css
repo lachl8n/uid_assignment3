@@ -1056,12 +1056,12 @@ body{
         display: none;
     }
 
-    .laptop-header {
+    .phone-header {
         display: none;
         opacity: 0;
     }
 
-    .phone-header {
+    .laptop-header {
         display: flex;
         opacity: 100%;
     }
